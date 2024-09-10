@@ -8,35 +8,31 @@ public class Teste {
 
 	public static void main(String[] args) {
 		
-		//1- instanciar a classe carro: carro carro;
-		//2- construir o objeto carro: carro = new Carro (Mustang);
-		//3- imprimir o nome do carro: 
-		//System.out.println ("carro setado com o nome de: " + carro.getNome());
+		Scanner scan = new Scanner(System.in);
 		
-		//instanciando o scanner
-		Scanner scan;
+		Carro carro = new Carro(null, null, 0, null, 0);
 		
-		//construindo o objeto scanner
-		scan = new Scanner(System.in);
+		System.out.println("Digite o nome do carro");
+		carro.setNome(scan.nextLine());
+	
 		
-		//Recebendo dados via console e colocando em uma variavel
-		String dados= "";
+		System.out.println("Digite a cor do carro");
+		carro.setCor(scan.nextLine());
 		
-		System.out.println("Digite algo neste terminal! :");
-		dados = scan.nextLine();
+		System.out.println("Digite o preço");
+		carro.setPreco(Double.parseDouble(scan.next()));
 		
-		System.out.println("Este foi o valor digitado :" + dados);
+		System.out.println("Digite o modelo");
+		carro.setModelo(scan.next());
 		
+		System.out.println("Digite o ano");
+		carro.setAno(Integer.parseInt(scan.next()));
 		
-		
-		
-		
+		carro.imprimir();
 		scan.close();
-		
-		
-		
+	
 
-		
+	}
 		
 		
 		
@@ -49,7 +45,7 @@ public class Teste {
 	
 		
 
-	}
+	
 	
 	
 

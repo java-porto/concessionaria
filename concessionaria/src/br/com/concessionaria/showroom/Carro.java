@@ -55,7 +55,14 @@ public class Carro {
 	public void setAno(int ano) {
 		this.ano = ano;
 	}
+	
+	
+	public void imprimir() {
+		System.out.println("Voce adquiriu o carro:" + this.nome + ", de cor:" + this.cor + ", valor: R$ " + this.preco + ",modelo:" + this.modelo + ", do ano: " +this.ano);
+	}
 
 
 
 }
+
+
