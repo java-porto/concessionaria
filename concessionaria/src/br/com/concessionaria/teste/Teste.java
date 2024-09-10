@@ -7,36 +7,33 @@ import br.com.concessionaria.showroom.Carro;
 public class Teste {
 
 	public static void main(String[] args) {
-		/*
-		 * //1 - Instanciar a classe carro: Carro carro;
-		 * 
-		 * //2 - Construir o objeto carro: carro = new Carro();
-		 * 
-		 * //3 - Imprimir o nome do carro:
-		 * System.out.println("Carro setado com o nome de : " + carro.getNome());
-		 */
 		
-		//instanciando o scanner
-		Scanner scan;
+		Scanner scan = new Scanner(System.in);
 		
-		//construindo o objeto scanner
-		scan = new Scanner(System.in);
+		Carro carro = new Carro();
 		
-		//Recebendo dados via console e colocando em uma variável:
-		String dados = "";
+		//Crie entradas para cada atributo da classe carro:
+		//Respeite o tipo de dados
+		System.out.println("Digite o nome do carro!");
+		carro.setNome(scan.next());
 		
-		System.out.println("Digite algo neste terminal! :");
-		dados = scan.nextLine();
-
-		System.out.println("Este foi o valor digitado : " + dados);
+		System.out.println("Digite a cor do carro!");
+		carro.setCor(scan.next());
 		
+		System.out.println("Digite o preço do carro!");
+		carro.setPreco( Double.parseDouble(scan.next()) );
 		
+		System.out.println("Digite o modelo do carro!");
+		carro.setModelo(scan.next());
 		
+		System.out.println("Digite o ano do carro!");
+		carro.setAno(Integer.parseInt(scan.next()));
+		//Volte na classe carro e rie 
+		// um método que imprima todos os atributos da classe;
 		
+		//Chame o novo método para verificar o resultado:
+		carro.imprimir();
 		scan.close();
-		
-		
-		
 	}
 
 }

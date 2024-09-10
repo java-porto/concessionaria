@@ -1,15 +1,16 @@
 package br.com.concessionaria.showroom;
 
 public class Carro {
-	
+
 	private String nome;
 	private String cor;
 	private double preco;
 	private String modelo;
 	private int ano;
-	
-	public Carro() {}
-	
+
+	public Carro() {
+	}
+
 	public Carro(String nome, String cor, double preco, String modelo, int ano) {
 		this.nome = nome;
 		this.cor = cor;
@@ -21,7 +22,7 @@ public class Carro {
 	public String getNome() {
 		return this.nome;
 	}
-	
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -57,13 +58,10 @@ public class Carro {
 	public void setAno(int ano) {
 		this.ano = ano;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	public void imprimir() {
+		System.out.println("Você adquiriu o carro " + this.nome + " de cor " +
+	this.cor + " com o preço R$ "+ this.preco + " modelo " + this.modelo + " do ano " + this.ano+".\nParabéns!");
+	}
+
 }
