@@ -39,7 +39,7 @@ public class Teste {
 		// Scanner sc = new Scanner(System.in);
 		 * 
 		 */
-		Scanner scan = new Scanner(System.in);
+		/* Scanner scan = new Scanner(System.in);
 		
 		Carro carro = new Carro();
 		
@@ -64,7 +64,44 @@ public class Teste {
 		
 		Vendedor vendedor = new Vendedor();
 		
-		Mecanico mecanico = new Mecanico();
+		Mecanico mecanico = new Mecanico();*/
+		
+		Scanner scan = new Scanner(System.in);
+		
+		String venda = "Vendas";
+		String financeiro = "Financeiro";
+		String sac = "SAC";
+		
+		boolean key = true;
+		
+		
+		while (key) {
+			System.out.println("Digite apenas uma das opções abaixo:");
+			System.out.println("1 = VENDAS\n2 - FINANCEIRO\n3 - SAC");
+			int opcao = 0;
+			try {
+				opcao = Integer.parseInt(scan.next());
+			} catch (NumberFormatException e) {
+				System.out.println("Somente números podem ser digitados");
+				opcao = Integer.parseInt(scan.next());
+				e.printStackTrace();
+			if(opcao == 1) {
+				System.out.println("A opção escolhida foi: " + venda);
+				key = false;
+			}else if(opcao == 2) {
+				System.out.println("A opção escolhida foi: " + financeiro);
+				key = false;
+			}else if(opcao == 3) {
+				System.out.println("A opção escolhida foi: " + sac);
+				key = false;
+			}else {
+				System.out.println("Digite uma opção válida!");
+			}
+		}
+			
+		}
+			scan.close();
+		}
 	}
 
-}
+
