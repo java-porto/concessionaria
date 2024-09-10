@@ -1,5 +1,8 @@
 package br.comconcessionaria.showroom;
 
+import br.comconcessionaria.dptcomercial.Mecanico;
+import br.comconcessionaria.dptcomercial.Vendedor;
+
 public class Carro {
 	private String nome;
 	private String cor;
@@ -7,12 +10,18 @@ public class Carro {
 	private String modelo;
 	private int ano;
 	public String getNome;
+	private Vendedor vendedor;
+	private Mecanico mecanico;
 	
 	public Carro(String nome) {
 		this.nome = nome;
 		
 	}
 	
+	 public Carro() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getNome() {
 		return this.nome;
 	}
@@ -44,7 +53,12 @@ public class Carro {
     public void setAno(int ano) {
     	this.ano = ano;
     }
-    		
+    public void imprimir() {
+    	System.out.println("Voce adquiriu o carro " + this.nome +" de cor" + this.cor + " com o preco r$ " + this.preco + "modelo" + this.modelo + "do ano" + this.ano);
+    	
+    }
+    
+    	
     	
     	
     	
