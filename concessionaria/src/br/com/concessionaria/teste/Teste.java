@@ -2,6 +2,8 @@ package br.com.concessionaria.teste;
 
 import java.util.Scanner;
 
+import br.com.concessionaria.showroom.Carro;
+
 //import br.com.concessionaria.showroom.Carro;
 
 public class Teste {
@@ -17,7 +19,7 @@ public class Teste {
 //		System.out.println("O carro é: " + carro.getNome());
 		
 		//Instanciando Scanner
-		Scanner scan;
+		/*Scanner scan;
 		
 		//Construindo objeto Scanner
 		scan = new Scanner(System.in);
@@ -31,6 +33,41 @@ public class Teste {
 		System.out.println("Este foi o valor digito: " + dados);
 		
 		scan.close();
+		
+		*/
+		
+		Scanner scan = new Scanner(System.in);
+		
+		Carro carro = new Carro();
+		
+		//Solicitando nome do carro
+		System.out.println("Digite o nome do carro:");
+		carro.setNome(scan.next());
+		
+		//Solicitando cor do carro
+		System.out.println("Digite a cor do carro:");
+		carro.setCor(scan.next());
+		
+		//Solicitando preço do carro
+		System.out.println("Digite o valor do carro:");
+		carro.setPreco(Double.parseDouble(scan.next()));
+		
+		//Solicitando modelo do carro
+		System.out.println("Digite o modelo do carro:");
+		carro.setModelo(scan.next());
+		
+		//Solicitando ano do carro
+		System.out.println("Digite ano do carro:");
+		carro.setAno(Integer.parseInt( scan.next()));
+		
+		//Imprimindo informações do carro
+		carro.fichaCarro();
+		
+		scan.close();
+		
+		
+		
+		//System.out.println(carro.getNome()); Volte na classe carro e crie um metodo que imprima todos os atributos da classe carro
 	}
 
 }
