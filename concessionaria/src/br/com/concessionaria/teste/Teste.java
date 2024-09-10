@@ -2,6 +2,8 @@ package br.com.concessionaria.teste;
 
 import java.util.Scanner;
 
+import br.com.concessionaria.deptocomercial.Mecanico;
+import br.com.concessionaria.deptocomercial.Vendedor;
 import br.com.concessionaria.showroom.Carro;
 
 public class Teste {
@@ -59,6 +61,10 @@ public class Teste {
 		carro.DadosCarro();
 		
 		scan.close();
+		
+		Vendedor vendedor = new Vendedor();
+		
+		Mecanico mecanico = new Mecanico();
 	}
 
 }
