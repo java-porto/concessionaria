@@ -18,6 +18,11 @@ public class Carro {
 		this.ano = ano;
 	}
 	
+	public void DadosCarro() {
+		System.out.println("O nome do carro é: " + this.nome +  " cor: " + 
+		this.cor + " preço: R$ " + this.preco + " modelo: " + this.modelo + " ano: " + this.ano + " Parabéns!");
+	}
+	
 	//Getters & Setters
 	
 	public String getNome() {
