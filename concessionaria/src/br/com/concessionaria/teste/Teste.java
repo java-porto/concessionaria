@@ -2,6 +2,8 @@ package br.com.concessionaria.teste;
 
 import java.util.Scanner;
 
+import br.com.concessionaria.deptocomercial.Mecanico;
+import br.com.concessionaria.deptocomercial.Vendedor;
 import br.com.concessionaria.showroom.Carro;
 
 //import br.com.concessionaria.showroom.Carro;
@@ -65,9 +67,9 @@ public class Teste {
 		
 		scan.close();
 		
+		Vendedor vendedor = new Vendedor();
 		
-		
-		//System.out.println(carro.getNome()); Volte na classe carro e crie um metodo que imprima todos os atributos da classe carro
+		Mecanico mecanico = new Mecanico();
 	}
 
 }
