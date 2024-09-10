@@ -2,9 +2,9 @@ package br.com.concessionaria.teste;
 
 import java.util.Scanner;
 
-import br.com.concessionaria.deptocomercial.Mecanico;
-import br.com.concessionaria.deptocomercial.Vendedor;
-import br.com.concessionaria.showroom.Carro;
+//import br.com.concessionaria.deptocomercial.Mecanico;
+//import br.com.concessionaria.deptocomercial.Vendedor;
+//import br.com.concessionaria.showroom.Carro;
 
 //import br.com.concessionaria.showroom.Carro;
 
@@ -36,8 +36,6 @@ public class Teste {
 		
 		scan.close();
 		
-		*/
-		
 		Scanner scan = new Scanner(System.in);
 		
 		Carro carro = new Carro();
@@ -67,9 +65,43 @@ public class Teste {
 		
 		scan.close();
 		
-		Vendedor vendedor = new Vendedor();
+		*/
 		
-		Mecanico mecanico = new Mecanico();
+		Scanner scan = new Scanner(System.in);
+		
+		String vendas = "Vendas";
+		String financeiro = "Financeiros";
+		String sac = "SAC";
+		
+		boolean key = true;
+		
+		while(key) {
+			System.out.println("Digite apenas uma das opções abaixo");
+			System.out.println("1 - Vendas\n2 - Financeiro\n3 -  SAC");
+			int opcao = 0;
+			try {
+				opcao = Integer.parseInt(scan.next());
+			} catch (Exception e) {
+				System.out.println("Somente números podem ser digitados:");
+				opcao = Integer.parseInt(scan.next());
+			}
+			if(opcao == 1) {
+				System.out.println("A opção ecolhida foi " + vendas);
+				key = false;
+			} else if (opcao == 2) {
+				System.out.println("A opção escolhida foi " + financeiro);
+				key = false;
+			} else if (opcao == 3) {
+				System.out.println("A opção escolhida foi " + sac);
+				key = false;
+			} else {
+				System.out.println("Digite uma opção válida");
+			}
+			
+		}
+		
+		scan.close();
+		
 	}
 
 }
