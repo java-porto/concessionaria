@@ -1,5 +1,6 @@
 package br.com.concessionaria.teste;
 
+import br.com.concessionaria.deptocomercial.Vendedor;
 import br.com.concessionaria.showroom.Carro;
 
 import java.util.Scanner;
@@ -58,9 +59,14 @@ public class Teste {
 		//Chame o novo método para verificar o resultado:
 		
 		carro.imprimirAtributos();
-
-		
 		scan.close();
+		
+		
+		Vendedor vendedor = new Vendedor();
+		
+		
+		vendedor.get
+		
 	}
 
 }
