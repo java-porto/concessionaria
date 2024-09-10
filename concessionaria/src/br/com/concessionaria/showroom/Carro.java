@@ -1,26 +1,39 @@
 package br.com.concessionaria.showroom;
 
+import br.com.concessionaria.deptocomercial.Mecanico;
+import br.com.concessionaria.deptocomercial.Vendedor;
+
 public class Carro {
 
 	private String nome;
 	private String cor;
 	private double preco;
 	private String modelo;
-	private int ano;
-
+	private int ano;	
+	private Vendedor vendedor;
+	private Mecanico mecanico;
+	
 	public Carro() {
 	}
-
-	public Carro(String nome, String cor, double preco, String modelo, int ano) {
+	
+	public void imprimir() {
+		System.out.println("Você adquiriu o carro " + this.nome + " de cor " +
+	this.cor + " com o preço R$ "+ this.preco + " modelo " + this.modelo + " do ano " + this.ano+".\nParabéns!");
+	}
+	
+	public Carro(String nome, String cor, double preco, String modelo, int ano, Vendedor vendedor, Mecanico mecanico) {
+		super();
 		this.nome = nome;
 		this.cor = cor;
 		this.preco = preco;
 		this.modelo = modelo;
 		this.ano = ano;
+		this.vendedor = vendedor;
+		this.mecanico = mecanico;
 	}
 
 	public String getNome() {
-		return this.nome;
+		return nome;
 	}
 
 	public void setNome(String nome) {
@@ -59,9 +72,21 @@ public class Carro {
 		this.ano = ano;
 	}
 
-	public void imprimir() {
-		System.out.println("Você adquiriu o carro " + this.nome + " de cor " +
-	this.cor + " com o preço R$ "+ this.preco + " modelo " + this.modelo + " do ano " + this.ano+".\nParabéns!");
+	public Vendedor getVendedor() {
+		return vendedor;
 	}
 
+	public void setVendedor(Vendedor vendedor) {
+		this.vendedor = vendedor;
+	}
+
+	public Mecanico getMecanico() {
+		return mecanico;
+	}
+
+	public void setMecanico(Mecanico mecanico) {
+		this.mecanico = mecanico;
+	}
+
+	
 }
