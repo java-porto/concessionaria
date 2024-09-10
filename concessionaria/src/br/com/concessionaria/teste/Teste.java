@@ -5,42 +5,69 @@ import java.util.Scanner;
 import br.com.concessionaria.showroom.Carro;
 
 public class Teste {
-
+	
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		Carro carro = new Carro(null, null, 0, null, 0);
+		String venda = "Vendas";
+		String financeiro = "Financeiro";
+		String sac = "SAC";
 		
-		System.out.println("Digite o nome do carro");
-		carro.setNome(scan.nextLine());
+		
+		boolean key = true;
+		
+		while (key) {
+			System.out.println("Digite apenas uma das opções abaixo:");
+			System.out.println("1 - VENDAS\n2 - FINANCEIRO\n3 - SAC");
+			int opcao = 0;
+			
+			
+			try {
+			 opcao = Integer.parseInt(scan.next());
+			} 	 catch (NumberFormatException e) {
+				System.out.println("Sommente números podem ser digitados!!");
+				opcao = Integer.parseInt(scan.next());
+			}
+			
+			if(opcao == 1) {
+				System.out.println("A opção escolhida foi: " + venda);
+				key = false;
+			} else if (opcao == 2) {
+			
+				System.out.println("A opção escolhida foi: " + financeiro);
+				key = false;
+			}else if (opcao == 3) {
+					System.out.println("A opção escolhida foi: " + sac);
+					key = false;
+				}else {
+					System.out.println("Digite uma opção válida!");
+				}
+				
+			scan.close();
+		}
+		
+
+		
+	}
 	
+}
 		
-		System.out.println("Digite a cor do carro");
-		carro.setCor(scan.nextLine());
-		
-		System.out.println("Digite o preço");
-		carro.setPreco(Double.parseDouble(scan.next()));
-		
-		System.out.println("Digite o modelo");
-		carro.setModelo(scan.next());
-		
-		System.out.println("Digite o ano");
-		carro.setAno(Integer.parseInt(scan.next()));
-		
-		carro.imprimir();
-		scan.close();
+	
+	
 	
 
-	}
+	
 		
+			
+			
 		
 		
 	
-		
-		
 	
-		}
+
+
+	
 		
 	
 		
