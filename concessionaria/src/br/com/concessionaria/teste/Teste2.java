@@ -27,8 +27,11 @@ public class Teste2 {
 		mecanico[4].setNome("Gabriel");
 		
 		for (Mecanico mecanicos : mecanico) {
-			System.out.println("Nome dos mêcanicos: " + mecanicos.getNome());
+			System.out.println("Nome dos Mecânicos: " + mecanicos.getNome());
 		}
+		
+	
+		
 	}
 
 }
