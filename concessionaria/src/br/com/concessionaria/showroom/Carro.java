@@ -11,7 +11,7 @@ public class Carro {
 	private String modelo;
 	private int ano;
 	private Vendedor vendedor;
-	private Mecanico mecanico;
+	private Mecanico mecanico; 
 	
 	public Carro() {
 	}
@@ -32,8 +32,8 @@ public class Carro {
 		this.vendedor = vendedor;
 		this.mecanico = mecanico;
 	}
-
-
+	
+	
 	public String getNome() {
 		return nome;
 	}
