@@ -73,7 +73,11 @@ public class teste2 {
      //System.out.println("");
 
     Vendedor vendedor = new Vendedor();
-    vendedor.getLista();
+    
+    vendedor.setCargo("Gerente");
+    vendedor.setId(1234);
+    vendedor.setNome("Joca");
+    vendedor.getLista(vendedor);
 	
 
 
