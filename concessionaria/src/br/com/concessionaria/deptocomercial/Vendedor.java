@@ -7,7 +7,7 @@ import br.com.concessionaria.showroom.Carro;
 
 public class Vendedor extends Comercial {
 	
-	private List<Carro> listaCarro = null;
+	public static List<Carro> listaCarro = null;
 
 	public Vendedor() {
 		
@@ -79,24 +79,27 @@ public class Vendedor extends Comercial {
 	}
 	
 	public void getListaCarro(Vendedor vendedor) {
-		for (Carro carro : listaCarro) {
-			System.out.println("+++++SHOW ROOM+++++\n");
+		
+		System.out.println("+++++SHOW ROOM+++++");
+		
+		for (int x = 0; x < listaCarro.size(); x++) {
+					
+			System.out.println("\n-----------------------------------\n");
 			
-			System.out.println("-----------------------------------\n");
+			System.out.println("Carro número = " + (x+1));
 			
-			System.out.println("Nome: " + carro.getNome());
+			System.out.println("Nome: " + listaCarro.get(x).getNome());
 			
-			System.out.println("Ano: " + carro.getAno());
+			System.out.println("Ano: " + listaCarro.get(x).getAno());
 			
-			System.out.println("Modelo: " + carro.getModelo());
+			System.out.println("Modelo: " + listaCarro.get(x).getModelo());
 			
-			System.out.println("Cor: " + carro.getCor());
+			System.out.println("Cor: " + listaCarro.get(x).getCor());
 			
-			System.out.println("Nome: " + carro.getPreco());
+			System.out.println("Preço: " + listaCarro.get(x).getPreco());
 			
 			System.out.println("Vendedor: " + vendedor.getNome());
 			
-			System.out.println("\n-----------------------------------\n");
 		}
 	}
 }

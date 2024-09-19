@@ -2,6 +2,9 @@ package br.com.concessionaria.teste;
 
 import java.util.Scanner;
 
+import br.com.concessionaria.deptocomercial.Vendedor;
+import br.com.concessionaria.showroom.Carro;
+
 //import br.com.concessionaria.deptocomercial.Mecanico;
 //import br.com.concessionaria.deptocomercial.Vendedor;
 //import br.com.concessionaria.showroom.Carro;
@@ -78,6 +81,10 @@ public class Teste {
 		String financeiro = "Financeiros";
 		String sac = "SAC";
 
+		Vendedor vendedor = new Vendedor();
+		
+		Carro carro;
+
 		boolean key = true;
 
 		comando: while (key) {
@@ -93,19 +100,35 @@ public class Teste {
 					System.out.println("Selecionei uma das opções a baixo:");
 					System.out.println("1 - Comprar\n2 - Vender\n3 - Representante\n0 - Voltar para o menu anterior");
 					opcao = Integer.parseInt(scan.next());
-					
+
 					switch (opcao) {
-					case 1: System.out.println("A opção escolhida foi Comprar");
-						key = false;
-						break;
+					case 1:
+						System.out.println("A opção escolhida foi Comprar");
+						vendedor.setNome("Clebsu");
+						vendedor.setCargo("Gerente Geral de Vendas");
+						vendedor.setId(0115154);
+						vendedor.getListaCarro(vendedor);
+
+						System.out.println("Selecione um de nossos carros:");
+
+						opcao = Integer.parseInt(scan.next());
 						
-					case 2: System.out.println("A opção escolhida foi Vender");
+						carro = vendedor.listaCarro.get(opcao-1);
+						
+						System.out.println("Esse foi o veículo escolhido: " + carro.getNome());
+								
+						break;
+
+					case 2:
+						System.out.println("A opção escolhida foi Vender");
 						key = false;
 						break;
-					case 3: System.out.println("A opção escolhida foi representante");
+					case 3:
+						System.out.println("A opção escolhida foi representante");
 						key = false;
 						break;
-					default: System.out.println("Somente opções entre 1 e 3 são permitidas.");
+					default:
+						System.out.println("Somente opções entre 1 e 3 são permitidas.");
 						break;
 					}
 
@@ -117,17 +140,17 @@ public class Teste {
 					key = false;
 				} else {
 					System.out.println("Digite uma opção válida");
-				}//final do if
+				} // final do if
 
 			} catch (NumberFormatException e) {
 				System.out.println("Somente números podem ser digitados:");
 				continue comando;
-			}//final do try e catch
+			} // final do try e catch
 
-		}//final do while
+		} // final do while
 
 		scan.close();
 
-	}//final da main
+	}// final da main
 
-}//final da class
+}// final da class
