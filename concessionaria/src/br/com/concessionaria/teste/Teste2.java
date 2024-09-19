@@ -1,5 +1,7 @@
 package br.com.concessionaria.teste;
 
+import java.util.Iterator;
+
 import br.com.concessionaria.deptocomercial.Mecanico;
 import br.com.concessionaria.showroom.Carro;
 
@@ -42,6 +44,28 @@ public class Teste2 {
 		}
 		
 		System.out.println("-----------------------------");
+		
+		int nrLinhas = 21;
+		int nrColunas = 4;
+		
+		String[][] assentos = new String[nrLinhas][nrColunas];
+		
+		for (int x = 0; x < assentos.length; x++) {
+			for (int i = 0; i < nrColunas; i++) {
+				assentos[x][i] = "O";
+			}
+		}
+		
+			for (int x = 0; x < assentos.length; x++) {
+				for (int i = 0; i < nrColunas; i++) {
+					if(i == 2) {
+						System.out.println("-");
+					}
+					System.out.println("["+ assentos[x][i] +"]");
+				}
+			System.out.println("");
+		}
+		
 	}
 
 }
