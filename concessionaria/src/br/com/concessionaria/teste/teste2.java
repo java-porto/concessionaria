@@ -39,22 +39,48 @@ public class teste2 {
 	mecanico[1].setNome("Datena");
 	mecanico[2].setNome("Kety <3");
 	mecanico[3].setNome("Pablo marçal");
-	mecanico[4].setNome("Franchesco virgulini");
+	mecanico[4].setNome("Joca");
 	
 	for (Mecanico mecaninho : mecanico) {
 		System.out.println("Nome do mecânico : " + mecaninho.getNome());
 	}
 	
+	int nrLinhas = 21;
+	int nrColunas = 4;
+	
+	String[][] assentos = new String[nrLinhas][nrColunas];
+	
+	for (int x = 0; x < assentos.length; x++) {
+		
+		for (int i = 0; i < nrColunas; i++) {
+			assentos[x][i] = "O";
+		}
+		
+		
+		
+	}
+	
+for (int x = 0; x < assentos.length; x++) {
+		
+		for (int i = 0; i < nrColunas; i++) {
+			if(i == 2) {
+				System.out.print("-");
+			}
+			System.out.print("["+ assentos[x][i] +"]");
+			
+		}
+		System.out.println("");
+		
+		
+	}
 	
 	
-	
-	
-	
+	}
 	
 	
 
 	}
 
-}
+
 
 
