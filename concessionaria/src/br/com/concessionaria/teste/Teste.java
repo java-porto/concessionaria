@@ -2,6 +2,7 @@ package br.com.concessionaria.teste;
 
 import java.util.Scanner;
 
+import br.com.concessionaria.deptocomercial.Vendedor;
 import br.com.concessionaria.showroom.Carro;
 
 
@@ -14,7 +15,9 @@ public class Teste {
 		String venda = "Vendas";
 		String financeiro = "Financeiro";
 		String sac = "SAC";
-
+		
+		Vendedor vendedor = new Vendedor();
+		Carro carro;
 		boolean key = true;
 
 		comando: while (key) {
@@ -34,8 +37,19 @@ public class Teste {
 
 					case 1:
 						System.out.println("Opção escolhida COMPRAR");
-						key = false;
-
+						vendedor.setCargo("Gerente");
+						vendedor.setId(12345);
+						vendedor.setNome("Jonas");
+						vendedor.getLista(vendedor);
+						
+						System.out.println("Selecione um de nossos carros : ");
+						
+						opcao = Integer.parseInt(scan.next());
+						
+						carro = vendedor.lista.get(opcao-1);
+						
+						System.out.println("Esse é o veículo que você escolheu? " + carro.getNome());
+						
 						break;
 
 					case 2:
