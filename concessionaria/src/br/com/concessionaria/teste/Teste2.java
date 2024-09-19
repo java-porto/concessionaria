@@ -1,5 +1,7 @@
 package br.com.concessionaria.teste;
 
+import java.util.Iterator;
+
 import br.com.concessionaria.deptocomercial.Mecanico;
 import br.com.concessionaria.showroom.Carro;
 
@@ -40,6 +42,27 @@ public class Teste2 {
 		
 		for (Mecanico mecanico2 : mecanico) {
 			System.out.println("Nome do mecânico é " + mecanico2.getNome());
+		}
+		
+		int nrColunas = 4;
+		
+		String[][] assentos = new String[21][nrColunas];
+		
+		for (int x = 0; x < assentos.length; x++) {
+			
+			for (int i = 0; i < nrColunas; i++) {
+				assentos[x][i] ="0";
+			}			
+		}
+		
+		for (int x = 0; x < assentos.length; x++) {
+			for(int i = 0; i < nrColunas; i++) {
+				if (i == 2) {
+					System.out.print("| |");
+				}
+				System.out.print("[" + assentos[x][i] + "]");
+			}
+			System.out.print("\n");
 		}
 	}
 
