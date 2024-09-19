@@ -25,7 +25,6 @@ public class Vendedor extends Comercial{
 		mecanico.setNome("Jonas");
 		mecanico.setCargo("Supervisor");
 		carro.setMecanico(mecanico);
-		carro.setVendedor(getClass().cast(mecanico));
 		lista.add(carro);
 		
 		
@@ -42,7 +41,7 @@ public class Vendedor extends Comercial{
 		mecanico.setId(2361);
 		mecanico.setNome("Gabriel");
 		mecanico.setCargo("Mecânico");
-		carro.setMecanico(mecanico);
+
 		lista.add(carro);
 		
 		
@@ -97,6 +96,20 @@ public class Vendedor extends Comercial{
 		carro.setMecanico(mecanico);
 		lista.add(carro);
 		
+		}
+	
+	public void getLista(Vendedor vendedor) {
+		
+		for(Carro carro : lista) {
+			System.out.println("+++++ SHOWROOM +++++");
+			System.out.println("****************************************");
+			System.out.println("Nome do Carro:  " + carro.getNome());
+			System.out.println("Ano de Fabricação:  " + carro.getAno());
+			System.out.println("Modelo:  " + carro.getModelo());
+			System.out.println("Cor:  " + carro.getCor());
+			System.out.println("VENDEDOR RESPONSÁVEL:  " + vendedor.getNome());
+			System.out.println("****************************************");
+		}
 		
 	}
 

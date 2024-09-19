@@ -1,5 +1,7 @@
 package br.com.concessionaria.showroom;
 
+import java.util.List;
+
 import br.com.concessionaria.deptocomercial.Mecanico;
 import br.com.concessionaria.deptocomercial.Vendedor;
 
@@ -12,7 +14,7 @@ public class Carro {
 	private int ano;
 	private Vendedor vendedor;
 	private Mecanico mecanico;
-	
+	private List<Carro> lista = null;
 	
 	public Carro() {
 		
@@ -98,25 +100,8 @@ public class Carro {
 	public void setMecanico(Mecanico mecanico) {
 		this.mecanico = mecanico;
 	}
+		
 
-	public void getLista() {
-		
-		for(Carro carro : lista) {
-			System.out.println("+++++SHOW ROOM+++++");
-			
-			System.out.println("********************************************************************");
-			System.out.println("NOME : " + carro.getNome());
-			System.out.println("ANO FABRICAÇÃO : " + carro.getAno());
-			System.out.println("MODELO : " + carro.getModelo());
-			System.out.println("COR : " + carro.getCor());
-			System.out.println("VENDEDOR RESPONSÁVEL : " + carro.getVendedor().getNome());
-			System.out.println("********************************************************************");
-		}
-		
-		
-		
-	}
-	
 	
 	// Método para imprimir todos os atributos
 	public void imprimirAtributos() {

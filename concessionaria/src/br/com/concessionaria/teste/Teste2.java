@@ -1,6 +1,7 @@
 package br.com.concessionaria.teste;
 
 import br.com.concessionaria.deptocomercial.Mecanico;
+import br.com.concessionaria.deptocomercial.Vendedor;
 import br.com.concessionaria.showroom.Carro;
 
 public class Teste2 {
@@ -58,9 +59,12 @@ public class Teste2 {
 		//}
 		
 		
-		Carro carro = new Carro();
+		Vendedor vendedor = new Vendedor();
 		
-		carro.getLista();
+		vendedor.setCargo("Gerente");
+		vendedor.setId(1234);
+		vendedor.setNome("Felipe");
+		vendedor.getLista(vendedor);
 		
 	}
 
