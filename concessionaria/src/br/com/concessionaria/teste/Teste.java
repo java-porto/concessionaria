@@ -122,8 +122,14 @@ public class Teste {
 				System.out.println("Somente números podem ser digitados!!!");
 				continue comando;
 			}
-		} //Final While
 			
+		} //Final While
+		
+		
+		
+		
+		
+		
 		scan.close();
 		
 		
