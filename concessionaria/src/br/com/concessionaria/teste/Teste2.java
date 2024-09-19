@@ -11,7 +11,7 @@ public class Teste2 {
 
 	public static void main(String[] args) {
 
-			
+		// Aula 17/09/2024	
 			
 		//Mecanico[] mecanico = new Mecanico[5];
 		//mecanico[0] = new Mecanico();
