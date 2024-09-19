@@ -64,6 +64,9 @@ public class Teste {
 		String venda = "Vendas";
 		String financeiro = "Financeiro";
 		String sac = "SAC";
+		
+		Vendedor vendedor = new Vendedor();
+		Carro carro;
 
 		boolean key = true;
 		
@@ -87,7 +90,14 @@ public class Teste {
 					switch (opcao) {
 						case 1:
 							System.out.println("Selecionado: Comprar");
-							key = false;
+							vendedor.setCargo("Gerente");
+							vendedor.setId(12345);
+							vendedor.setNome("Jonas");
+							vendedor.getLista(vendedor);
+							System.out.println("Selecione um dos nossos carros: ");
+							opcao = Integer.parseInt(scan.next());
+							carro = vendedor.lista.get(opcao-1);
+							System.out.println("Esse é o veiculo selecionado ? " + carro.getNome());
 							break;
 							
 						case 2:
