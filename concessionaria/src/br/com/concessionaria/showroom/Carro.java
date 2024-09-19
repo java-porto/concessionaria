@@ -173,8 +173,28 @@ public class Carro {
 		this.mecanico = mecanico;
 	}
 
-	public void fichaCarro() {
-		System.out.println("Parabens! Você adquiriu o carro. Veja detalhes a baixo: \nNome: " + this.nome + "\nCor: " + this.cor + "\nValor: R$"
-				+ this.preco + "\nModelo: " + this.modelo + " \nAno: " + this.ano);
+//	public void fichaCarro() {
+//		System.out.println("Parabens! Você adquiriu o carro. Veja detalhes a baixo: \nNome: " + this.nome + "\nCor: " + this.cor + "\nValor: R$"
+//				+ this.preco + "\nModelo: " + this.modelo + " \nAno: " + this.ano);
+//	}
+	
+	public void getLista() {
+		for (Carro carro : listaCarro) {
+			System.out.println("+++++SHOW ROOM+++++");
+			
+			System.out.println("Nome: " + carro.getNome());
+			
+			System.out.println("Ano: " + carro.getAno());
+			
+			System.out.println("Modelo: " + carro.getModelo());
+			
+			System.out.println("Cor: " + carro.getCor());
+			
+			System.out.println("Nome: " + carro.getPreco());
+			
+			System.out.println("Vendedor: " + carro.getVendedor().getNome());
+			
+			System.out.println("-----------------------------------");
+		}
 	}
 }

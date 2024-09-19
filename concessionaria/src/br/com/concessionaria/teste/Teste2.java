@@ -3,6 +3,7 @@ package br.com.concessionaria.teste;
 import java.util.Iterator;
 
 import br.com.concessionaria.deptocomercial.Mecanico;
+import br.com.concessionaria.deptocomercial.Vendedor;
 import br.com.concessionaria.showroom.Carro;
 
 public class Teste2 {
@@ -63,6 +64,10 @@ public class Teste2 {
 				System.out.print("[" + assentos[x][i] + "]");
 			}
 			System.out.print("\n");
+			
+			Vendedor vendedor = new Vendedor();
+			
+			
 		}
 	}
 
