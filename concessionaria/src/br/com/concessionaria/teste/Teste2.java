@@ -3,13 +3,14 @@ package br.com.concessionaria.teste;
 import java.util.Iterator;
 
 import br.com.concessionaria.deptocomercial.Mecanico;
+import br.com.concessionaria.deptocomercial.Vendedor;
 import br.com.concessionaria.showroom.Carro;
 
 public class Teste2 {
 
 	public static void main(String[] args) {
 		
-		Carro carro[] = new Carro[3];
+		/*Carro carro[] = new Carro[3];
 		carro[0] = new Carro();
 		carro[1] = new Carro();
 		carro[2] = new Carro();
@@ -64,7 +65,14 @@ public class Teste2 {
 					System.out.println("["+ assentos[x][i] +"]");
 				}
 			System.out.println("");
-		}
+		}*/
+		
+		Vendedor vendedor = new Vendedor();
+		
+		vendedor.setCargo("Gerente");
+		vendedor.setId(12345);
+		vendedor.setNome("Jonas");
+		vendedor.getLista(vendedor);
 		
 	}
 
