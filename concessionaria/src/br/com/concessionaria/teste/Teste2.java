@@ -1,6 +1,7 @@
 package br.com.concessionaria.teste;
 
 import br.com.concessionaria.deptocomercial.Mecanico;
+import br.com.concessionaria.deptocomercial.Vendedor;
 import br.com.concessionaria.showroom.Carro;
 
 public class Teste2 {
@@ -24,46 +25,55 @@ public class Teste2 {
 		//Exercício:
 		//Crie um array de mecânicos com 5 mecânicos e imprima:
 		
-		Mecanico mecanico[] = new Mecanico[5];
-		mecanico[0] = new Mecanico();
-		mecanico[1] = new Mecanico();
-		mecanico[2] = new Mecanico();
-		mecanico[3] = new Mecanico();
-		mecanico[4] = new Mecanico();
+//		Mecanico mecanico[] = new Mecanico[5];
+//		mecanico[0] = new Mecanico();
+//		mecanico[1] = new Mecanico();
+//		mecanico[2] = new Mecanico();
+//		mecanico[3] = new Mecanico();
+//		mecanico[4] = new Mecanico();
+//		
+//		mecanico[0].setNome("Jorge");
+//		mecanico[1].setNome("Arnaldo");
+//		mecanico[2].setNome("Airton");
+//		mecanico[3].setNome("Plinio");
+//		mecanico[4].setNome("João");
+//		
+//		//através do foreach:
+//		for (Mecanico mecanico2 : mecanico) {
+//			System.out.println("O nome do mecanico que te atendeu foi : " + mecanico2.getNome());
+//		}
+//		
+//		int nrLinhas = 21;
+//		int nrColunas = 4;
+//		
+//		
+//		String[][] assentos = new String[nrLinhas][nrColunas];
+//		for (int x = 0; x < assentos.length ; x++) {
+//			for(int i = 0; i < nrColunas ; i++) {
+//				assentos[x][i] = "O";
+//				
+//			}
+//			
+//		}
+//		for (int x = 0; x < assentos.length ; x++) {
+//			for(int i = 0; i < nrColunas ; i++) {
+//				if(i == 2) {
+//					System.out.print("-");
+//				}
+//				System.out.print("["+ assentos[x][i] +"]");
+//			}
+//			System.out.println("");
+//		}
+//				
+//	}
 		
-		mecanico[0].setNome("Jorge");
-		mecanico[1].setNome("Arnaldo");
-		mecanico[2].setNome("Airton");
-		mecanico[3].setNome("Plinio");
-		mecanico[4].setNome("João");
+		Vendedor vendedor = new Vendedor();
 		
-		//através do foreach:
-		for (Mecanico mecanico2 : mecanico) {
-			System.out.println("O nome do mecanico que te atendeu foi : " + mecanico2.getNome());
-		}
-		
-		int nrLinhas = 21;
-		int nrColunas = 4;
+		vendedor.setCargo("Gerente");
+		vendedor.setId(12345);
+		vendedor.setNome("Jonas");
+		vendedor.getLista(vendedor);
 		
 		
-		String[][] assentos = new String[nrLinhas][nrColunas];
-		for (int x = 0; x < assentos.length ; x++) {
-			for(int i = 0; i < nrColunas ; i++) {
-				assentos[x][i] = "O";
-				
-			}
-			
-		}
-		for (int x = 0; x < assentos.length ; x++) {
-			for(int i = 0; i < nrColunas ; i++) {
-				if(i == 2) {
-					System.out.print("-");
-				}
-				System.out.print("["+ assentos[x][i] +"]");
-			}
-			System.out.println("");
-		}
-				
 	}
-	
 }
