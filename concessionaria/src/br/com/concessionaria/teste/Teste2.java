@@ -72,7 +72,10 @@ public class Teste2 {
 			
 		Vendedor vendedor = new Vendedor();
 		
-		vendedor.getLista();
+		vendedor.setCargo("Gerente");
+		vendedor.setId(12345);
+		vendedor.setNome("Jonas");
+		vendedor.getLista(vendedor);
 	
 	}
 

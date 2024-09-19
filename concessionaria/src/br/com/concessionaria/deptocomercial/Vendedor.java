@@ -122,16 +122,17 @@ public class Vendedor extends Comercial {
 
 	}
 
-	public void getLista() {
-
+	public void getLista(Vendedor vendedor) {
+		
 		for (Carro carro : lista) {
 			System.out.println("++++++++SHOW ROOM+++++");
-
+			
 			System.out.println("***********************************");
 			System.out.println("NOME : " + carro.getNome());
 			System.out.println("ANO FABRICAÇÃO : " + carro.getAno());
 			System.out.println("MODELO : " + carro.getModelo());
 			System.out.println("COR : " + carro.getCor());
+			System.out.println("VENDEDOR RESPONSÁVEL : " + vendedor.getNome());
 			System.out.println("***********************************");
 		}
 
