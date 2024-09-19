@@ -32,30 +32,35 @@ public class Teste2 {
 		
 	//Aula 19/09/2024 - Matrizes
 		
-		int nrLinhas = 21;
-		int nrColunas = 4;
+		//int nrLinhas = 21;
+		//int nrColunas = 4;
+	
+		//String[][] assentos = new String[nrLinhas][nrColunas];
 		
-		String[][] assentos = new String[nrLinhas][nrColunas];
+		//for (int x = 0; x < assentos.length; x++) {
+
+			//for(int i = 0; i < nrColunas; i++) {
+				//assentos[x][i] = "O";
+
+			//}	
+		//}
 		
-		for (int x = 0; x < assentos.length; x++) {
+		//for (int x = 0; x < assentos.length; x++) {
 
-			for(int i = 0; i < nrColunas; i++) {
-				assentos[x][i] = "O";
+			//for(int i = 0; i < nrColunas; i++) {
+				//if(i == 2) {
+					//System.out.print("| |");
+				//}
+				//System.out.print("["+ assentos[x][i] +"]");
 
-			}	
-		}
+			//}	
+			//System.out.print("\n");
+		//}
 		
-		for (int x = 0; x < assentos.length; x++) {
-
-			for(int i = 0; i < nrColunas; i++) {
-				if(i == 2) {
-					System.out.print("| |");
-				}
-				System.out.print("["+ assentos[x][i] +"]");
-
-			}	
-			System.out.print("\n");
-		}
+		
+		Carro carro = new Carro();
+		
+		carro.getLista();
 		
 	}
 
