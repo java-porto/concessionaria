@@ -59,12 +59,12 @@ public class Teste2 {
 		//}
 		
 		
-		//Vendedor vendedor = new Vendedor();
+		Vendedor vendedor = new Vendedor();
 		
-		//vendedor.setCargo("Gerente");
-		//vendedor.setId(1234);
-		//vendedor.setNome("Felipe");
-		//vendedor.getLista(vendedor);
+		vendedor.setCargo("Gerente");
+		vendedor.setId(1234);
+		vendedor.setNome("Felipe");
+		vendedor.getLista(vendedor);
 		
 	}
 
