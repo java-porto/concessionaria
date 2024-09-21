@@ -3,11 +3,11 @@ package br.com.concessionaria.deptofinanceiro;
 import br.com.concessionaria.showroom.Carro;
 
 public class Financeiro {
-	
-private Carro carro;
+		
+	private Carro carro;
 	
 	public Financeiro() {
-		
+		// TODO Auto-generated constructor stub
 	}
 
 	public Financeiro(Carro carro) {
@@ -24,5 +24,4 @@ private Carro carro;
 	}
 	
 }
-
 

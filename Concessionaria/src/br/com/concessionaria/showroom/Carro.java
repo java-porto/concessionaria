@@ -1,5 +1,8 @@
 package br.com.concessionaria.showroom;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import br.com.concessionaria.deptocomercial.Mecanico;
 import br.com.concessionaria.deptocomercial.Vendedor;
 
@@ -13,8 +16,8 @@ public class Carro {
 	private Vendedor vendedor;
 	private Mecanico mecanico;
 	
-	public Carro() {
-	}
+	
+	public Carro() {}
 	
 	public void imprimir() {
 		System.out.println("Você adquiriu o carro " + this.nome + " de cor " +
@@ -87,6 +90,8 @@ public class Carro {
 	public void setMecanico(Mecanico mecanico) {
 		this.mecanico = mecanico;
 	}
+	
+	
 
 	
 }
