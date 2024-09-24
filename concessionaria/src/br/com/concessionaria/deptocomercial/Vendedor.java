@@ -7,6 +7,8 @@ import br.com.concessionaria.showroom.Carro;
 
 public class Vendedor extends Comercial {
 	
+	private int id;
+	
 	public static List<Carro> listaCarro = null;
 
 	public Vendedor() {
@@ -14,12 +16,12 @@ public class Vendedor extends Comercial {
 		listaCarro = new ArrayList<Carro>();
 		
 		Carro carros = new Carro();
-		
 		Mecanico mecanico = new Mecanico();
 		
 		//Carro 1
 		carros.setNome("Creta");
 		carros.setAno(2024);
+		carros.setId(25422);
 		carros.setCor("Branco");
 		carros.setPreco(119.990);
 		carros.setModelo("SUV");
@@ -30,8 +32,12 @@ public class Vendedor extends Comercial {
 		listaCarro.add(carros);
 		
 		//Carro 2
+		carros = new Carro();
+		mecanico = new Mecanico();
+		
 		carros.setNome("Fox");
 		carros.setAno(2013);
+		carros.setId(45487);
 		carros.setCor("Preto");
 		carros.setPreco(6.000);
 		carros.setModelo("SUV Pequeno");
@@ -42,8 +48,12 @@ public class Vendedor extends Comercial {
 		listaCarro.add(carros);
 		
 		//Carro 3
+		carros = new Carro();
+		mecanico = new Mecanico();
+		
 		carros.setNome("Tesla");
 		carros.setAno(2023);
+		carros.setId(54177);
 		carros.setCor("Vermelho");
 		carros.setPreco(225.000);
 		carros.setModelo("SEDÃ");
@@ -54,8 +64,12 @@ public class Vendedor extends Comercial {
 		listaCarro.add(carros);
 		
 		//Carro 4
+		carros = new Carro();
+		mecanico = new Mecanico();
+		
 		carros.setNome("Ford");
 		carros.setAno(2025);
+		carros.setId(54412);
 		carros.setCor("Amarelo");
 		carros.setPreco(325.000);
 		carros.setModelo("SUV");
@@ -66,8 +80,12 @@ public class Vendedor extends Comercial {
 		listaCarro.add(carros);
 		
 		//Carro 5
-		carros.setNome("GM");
+		carros = new Carro();
+		mecanico = new Mecanico();
+		
+		carros.setNome("Celta");
 		carros.setAno(2021);
+		carros.setId(264645);
 		carros.setCor("Prata");
 		carros.setPreco(75.000);
 		carros.setModelo("HATCH");
@@ -86,9 +104,7 @@ public class Vendedor extends Comercial {
 					
 			System.out.println("\n-----------------------------------\n");
 			
-			System.out.println("Carro número = " + (x+1));
-			
-			System.out.println("Nome: " + listaCarro.get(x).getNome());
+			System.out.println("Carro: " + (listaCarro.get(x).getNome()));
 			
 			System.out.println("Ano: " + listaCarro.get(x).getAno());
 			
@@ -101,5 +117,37 @@ public class Vendedor extends Comercial {
 			System.out.println("Vendedor: " + vendedor.getNome());
 			
 		}
+	}
+	
+	public int getCarrobyName(String nomeCarro) {
+		for(int x = 0; x < listaCarro.size(); x++) {
+			if(listaCarro.get(x).getNome().equals(nomeCarro)) { //.equals é um metodo que se compara o conteúdo do objeto
+				return listaCarro.get(x).getId();
+			}
+		}
+		
+		return 0;
+	}
+	
+	//Crie um metodo que utilize o metodo getCarroByName para retornar um objeto carro atravez do ID
+	
+	public Carro getCarroById(int id) {
+		for(int x = 0; x < listaCarro.size(); x++) {
+			if(listaCarro.get(x).getId() == id) {
+				return listaCarro.get(x);
+			}
+		}
+		
+		return null;
+	}
+	
+	public boolean removeCarroDaListaCarro(Carro carro) {
+		for(int x = 0; x < listaCarro.size(); x++) {
+			if(listaCarro.get(x) == carro) {
+				return listaCarro.remove(carro);
+			}
+		}
+		
+		return false;
 	}
 }

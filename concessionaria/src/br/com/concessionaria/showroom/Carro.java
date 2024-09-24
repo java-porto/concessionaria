@@ -9,18 +9,21 @@ public class Carro {
 	private double preco;
 	private String modelo;
 	private int ano;
+	private int id;
 	private Vendedor vendedor;
 	private Mecanico mecanico;
 	
 	public Carro() {}
 
-	public Carro(String nome, String cor, double preco, String modelo, int ano, Vendedor vendedor, Mecanico mecanico) {
+	public Carro(String nome, String cor, double preco, String modelo, int ano, int id, Vendedor vendedor,
+			Mecanico mecanico) {
 		super();
 		this.nome = nome;
 		this.cor = cor;
 		this.preco = preco;
 		this.modelo = modelo;
 		this.ano = ano;
+		this.id = id;
 		this.vendedor = vendedor;
 		this.mecanico = mecanico;
 	}
@@ -65,6 +68,14 @@ public class Carro {
 		this.ano = ano;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public Vendedor getVendedor() {
 		return vendedor;
 	}
@@ -81,9 +92,9 @@ public class Carro {
 		this.mecanico = mecanico;
 	}
 
-//	public void fichaCarro() {
-//		System.out.println("Parabens! Você adquiriu o carro. Veja detalhes a baixo: \nNome: " + this.nome + "\nCor: " + this.cor + "\nValor: R$"
-//				+ this.preco + "\nModelo: " + this.modelo + " \nAno: " + this.ano);
-//	}
+	public void imprimirFichaCarro() {
+		System.out.println("\nNome: " + this.nome + "\nCor: " + this.cor + "\nValor: R$"
+				+ this.preco + "\nModelo: " + this.modelo + " \nAno: " + this.ano + "\nEstá correto?");
+	}
 	
 }
