@@ -1,8 +1,4 @@
 package br.com.concessionaria.showroom;
-
-
-
-
 import br.com.concessionaria.dptocomercial.Mecanico;
 import br.com.concessionaria.dptocomercial.Vendedor;
 
@@ -13,6 +9,7 @@ public class Carro {
 	private double preco;
 	private String modelo;
 	private int ano;
+	private int id;
 	private Vendedor vendedor;
 	private Mecanico mecanico;
 	
@@ -22,19 +19,33 @@ public class Carro {
 		} 
 	
 	
-	
-	public Carro(String nome, String cor, double preco, String modelo, int ano, Vendedor vendedor, Mecanico mecanico) {
+
+	public Carro(String nome, String cor, double preco, String modelo, int ano, int id, Vendedor vendedor,
+			Mecanico mecanico) {
 		super();
 		this.nome = nome;
 		this.cor = cor;
 		this.preco = preco;
 		this.modelo = modelo;
 		this.ano = ano;
+		this.id = id;
 		this.vendedor = vendedor;
 		this.mecanico = mecanico;
 	}
-	
-	
+
+
+
+	public int getId() {
+		return id;
+	}
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
 
 	public String getNome() {
 		return nome;
@@ -121,8 +132,8 @@ public class Carro {
 	
 			
 	public void imprimir() {
-		System.out.println("Voce adquiriu o carro:" + this.nome + ", de cor:" +
-	this.cor + ", valor: R$ " + this.preco + ", modelo:" + this.modelo + ", do ano: " +this.ano);
+		System.out.println("Você escolheu o veículo: " + this.nome + ", de cor: " +
+	this.cor + ", valor: R$ " + this.preco + ", modelo: " + this.modelo + ", do ano: " +this.ano+".\nEstá correto?");
 	}
 
 
