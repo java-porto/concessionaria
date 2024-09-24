@@ -48,11 +48,18 @@ public class Teste {
 						
 						System.out.println("Selecione um de nossos carros:");
 						
-						opcao = Integer.parseInt(scan.next());
+						opcao = vendedor.getCarroByName(scan.next());
 						
-						carro = Vendedor.lista.get(opcao-1);
+						carro = vendedor.getCarroById(opcao);
 						
-						System.out.println("Esse é o veículo que você escolheu? " + carro.getNome());
+						System.out.println("Esse é o veículo que você escolheu? ");
+						carro.imprimir();
+						
+						System.out.println("Digite SIM para comprar:\nDigite CANCELAR para desistir.");
+						
+						if(scan.next().equals("SIM")) {
+							vendedor.removerCarroDaLista(carro);
+						}
 						
 						break;
 					case 2:
