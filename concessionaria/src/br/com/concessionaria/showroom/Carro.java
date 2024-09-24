@@ -1,6 +1,5 @@
 package br.com.concessionaria.showroom;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import br.com.concessionaria.deptocomercial.Mecanico;
@@ -13,6 +12,7 @@ public class Carro {
 	private double preco;
 	private String modelo;
 	private int ano;
+	private int id;
 	private Vendedor vendedor;
 	private Mecanico mecanico;
 	private List<Carro> lista = null;
@@ -23,8 +23,8 @@ public class Carro {
 	}
 
 	public void imprimir() {
-		System.out.println("Você adquiriu o carro " + this.nome + " de cor " + this.cor + " por R$ " + this.preco
-				+ " modelo " + this.modelo + " do ano " + this.ano);
+		System.out.println("Você escolheu o veículo " + this.nome + " de cor " + this.cor + " por R$ " + this.preco
+				+ " modelo " + this.modelo + " do ano " + this.ano+".\nEstá correto?");
 	}
 
 	public Carro(String nome, String cor, double preco, String modelo, int ano, Vendedor vendedor, Mecanico mecanico) {
@@ -34,6 +34,7 @@ public class Carro {
 		this.preco = preco;
 		this.modelo = modelo;
 		this.ano = ano;
+		this.id = id;
 		this.vendedor = vendedor;
 		this.mecanico = mecanico;
 	}
@@ -76,6 +77,12 @@ public class Carro {
 
 	public void setAno(int ano) {
 		this.ano = ano;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public Vendedor getVendedor() {

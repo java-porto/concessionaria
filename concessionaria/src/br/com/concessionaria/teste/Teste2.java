@@ -68,11 +68,14 @@ public class Teste2 {
 //	}
 		
 		Vendedor vendedor = new Vendedor();
+//		
+//		vendedor.setCargo("Gerente");
+//		vendedor.setId(12345);
+//		vendedor.setNome("Jonas");
+//		vendedor.getLista(vendedor);
+		Carro carro = vendedor.getCarroById(vendedor.getCarroByName("Astra"));
+		System.out.println(carro.getNome());
 		
-		vendedor.setCargo("Gerente");
-		vendedor.setId(12345);
-		vendedor.setNome("Jonas");
-		vendedor.getLista(vendedor);
 		
 		
 	}

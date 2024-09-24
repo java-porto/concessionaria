@@ -5,7 +5,6 @@ import java.util.Scanner;
 import br.com.concessionaria.deptocomercial.Vendedor;
 import br.com.concessionaria.showroom.Carro;
 
-
 public class Teste {
 
 	public static void main(String[] args) {
@@ -15,7 +14,7 @@ public class Teste {
 		String venda = "Vendas";
 		String financeiro = "Financeiro";
 		String sac = "SAC";
-		
+
 		Vendedor vendedor = new Vendedor();
 		Carro carro;
 		boolean key = true;
@@ -41,15 +40,22 @@ public class Teste {
 						vendedor.setId(12345);
 						vendedor.setNome("Jonas");
 						vendedor.getLista(vendedor);
-						
+
 						System.out.println("Selecione um de nossos carros : ");
-						
-						opcao = Integer.parseInt(scan.next());
-						
-						carro = vendedor.lista.get(opcao-1);
-						
-						System.out.println("Esse é o veículo que você escolheu? " + carro.getNome());
-						
+
+						opcao = vendedor.getCarroByName(scan.next());
+
+						carro = vendedor.getCarroById(opcao);
+
+						System.out.println("Esse é o veículo que você escolheu? ");
+						carro.imprimir();
+
+						System.out.println("Em caso positivo, digite SIM para comprar:\nDIgite CANCELAR para desistir");
+
+						if (scan.next().equals("SIM")) {
+							vendedor.removerCarroDaLista(carro);
+						}
+
 						break;
 
 					case 2:
@@ -69,7 +75,7 @@ public class Teste {
 						break;
 					}
 
-					key = false;
+				
 				} else if (opcao == 2) {
 					System.out.println("A opção escolhida foi : " + financeiro);
 
@@ -80,11 +86,11 @@ public class Teste {
 					System.out.println("Digite uma opção valida!");
 				}
 			} catch (NumberFormatException e) {
-
+				System.out.println("SOMENTE NUMEROS PODEM SER DIGITADOS!");
+				continue comando;
 			}
 
-			scan.close();
 		}
-
+		scan.close();
 	}
 }
