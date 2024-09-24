@@ -150,4 +150,13 @@ public class Vendedor extends Comercial {
 		
 		return false;
 	}
+	
+	public boolean insertCarro(Carro carro) {
+		int idCarro = listaCarro.get(listaCarro.size()).getId()+1;
+		carro.setId(idCarro);
+		if(listaCarro.add(carro)) {
+			return true;
+		}
+		return false;
+	}
 }
