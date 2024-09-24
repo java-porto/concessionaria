@@ -11,7 +11,6 @@ public class Teste {
 
 		Scanner scan = new Scanner(System.in);
 
-		String venda = "Vendas";
 		String financeiro = "Financeiro";
 		String sac = "SAC";
 		
