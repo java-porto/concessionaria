@@ -13,28 +13,35 @@ public class Carro {
 	private double preco;
 	private String modelo;
 	private int ano;
-	private Vendedor vendedor;
-	private Mecanico mecanico;
-	private List<Carro> lista = null;
+	private int id;
 	
 	public Carro() {
 	
 	}
 	
 	public void DadosCarro() {
-		System.out.println("O nome do carro é: " + this.nome +  " cor: " + 
-		this.cor + " preço: R$ " + this.preco + " modelo: " + this.modelo + " ano: " + this.ano + " Parabéns!");
+		System.out.println(this.nome +  " cor: " + 
+		this.cor + " preço: R$ " + this.preco + " modelo: " + this.modelo + " ano: " + this.ano + "\nCorreto ?");
 	}
 
-	public Carro(String nome, String cor, double preco, String modelo, int ano, Vendedor vendedor, Mecanico mecanico) {
+	
+
+	public Carro(String nome, String cor, double preco, String modelo, int ano, int id) {
 		super();
 		this.nome = nome;
 		this.cor = cor;
 		this.preco = preco;
 		this.modelo = modelo;
 		this.ano = ano;
-		this.vendedor = vendedor;
-		this.mecanico = mecanico;
+		this.id = id;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -77,22 +84,5 @@ public class Carro {
 		this.ano = ano;
 	}
 
-	public Vendedor getVendedor() {
-		return vendedor;
-	}
-
-	public void setVendedor(Vendedor vendedor) {
-		this.vendedor = vendedor;
-	}
-
-	public Mecanico getMecanico() {
-		return mecanico;
-	}
-
-	public void setMecanico(Mecanico mecanico) {
-		this.mecanico = mecanico;
-	}
-	
-	
-	
+		
 }

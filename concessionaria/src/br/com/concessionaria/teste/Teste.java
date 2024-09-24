@@ -95,9 +95,15 @@ public class Teste {
 							vendedor.setNome("Jonas");
 							vendedor.getLista(vendedor);
 							System.out.println("Selecione um dos nossos carros: ");
-							opcao = Integer.parseInt(scan.next());
-							carro = vendedor.lista.get(opcao-1);
-							System.out.println("Esse é o veiculo selecionado ? " + carro.getNome());
+							opcao = vendedor.getCarroByName(scan.next());
+							carro = vendedor.getCarroById(opcao);
+							System.out.println("Veiculo selecionado: ");
+							carro.DadosCarro();
+							System.out.println("Em caso positivo, digite Y para comprar\nCaso contrario, digite N");
+							
+							if(scan.next().equals("Y")) {
+								vendedor.removerCarroDaLista(carro);
+							}
 							break;
 							
 						case 2:
