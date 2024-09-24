@@ -71,6 +71,7 @@ public class Teste {
 		String financeiro = "Financeiro";
 		String sac = "SAC";
 		
+		
 		Vendedor vendedor = new Vendedor();
 		Carro carro;
 		

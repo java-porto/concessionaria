@@ -7,6 +7,7 @@ import br.com.concessionaria.showroom.Carro;
 
 public class Vendedor extends Comercial{
 	
+	private int id;
 	public static List<Carro> lista = null;
 	
 	public Vendedor() {
@@ -16,6 +17,8 @@ public class Vendedor extends Comercial{
 		Carro carro = new Carro();
 		Mecanico mecanico = new Mecanico();
 		
+
+		carro.setId(1);
 		carro.setAno(2024);
 		carro.setCor("Branco");
 		carro.setNome("Creta");
@@ -32,7 +35,7 @@ public class Vendedor extends Comercial{
 		carro = new Carro();
 		mecanico = new Mecanico();
 
-		
+		carro.setId(2);
 		carro.setAno(2024);
 		carro.setCor("Preto");
 		carro.setNome("Jeep");
@@ -50,7 +53,7 @@ public class Vendedor extends Comercial{
 		carro = new Carro();
 		mecanico = new Mecanico();
 
-		
+		carro.setId(3);
 		carro.setAno(2025);
 		carro.setCor("Vermelho");
 		carro.setNome("Tesla");
@@ -67,7 +70,7 @@ public class Vendedor extends Comercial{
 		carro = new Carro();
 		mecanico = new Mecanico();
 
-				
+		carro.setId(4);
 		carro.setAno(2025);
 		carro.setCor("Prata");
 		carro.setNome("Mercedes AMG");
@@ -84,7 +87,7 @@ public class Vendedor extends Comercial{
 		carro = new Carro();
 		mecanico = new Mecanico();
 
-				
+		carro.setId(5);
 		carro.setAno(2024);
 		carro.setCor("Preto");
 		carro.setNome("Nissan Kicks");
@@ -99,19 +102,54 @@ public class Vendedor extends Comercial{
 		}
 	
 	public void getLista(Vendedor vendedor) {
-		System.out.println("+++++++++++++++ SHOWROOM +++++++++++++++");
+		System.out.println("\n+++++++++++++++++++++++ SHOWROOM +++++++++++++++++++++++++++\n");
 		for(int x = 0; x < lista.size(); x++) {
 			
-			System.out.println("******************CARRO NR = "+ (x+1) +"**************************\n");
+			System.out.println("*********************CARRO NR = "+ (lista.get(x).getId()) +"*****************************\n");
 			System.out.println("Nome do Carro:  " + lista.get(x).getNome());
 			System.out.println("Ano de Fabricação:  " + lista.get(x).getAno());
 			System.out.println("Modelo:  " + lista.get(x).getModelo());
 			System.out.println("Cor:  " + lista.get(x).getCor());
 			System.out.println("Preço:  " + lista.get(x).getPreco());
 			System.out.println("VENDEDOR RESPONSÁVEL:  " + vendedor.getNome());
-			System.out.println("\n********************************************************");
+			System.out.println("\n**************************************************************");
 		}
 		
 	}
 
+	public int getCarroByName(String nomeCarro) {
+		for(int x = 0; x < lista.size(); x++) {
+			if(lista.get(x).getNome().equals(nomeCarro)) {
+				return lista.get(x).getId();
+			}
+		}
+		return 0;
+	}
+	
+	
+	
+	//Crie um método que utilize o método getCarroByName para retornar um Objeto Carro através do ID.
+	
+	
+
+//	public Carro getCarroById(int id) {
+//	    for (Carro carro : lista) { 
+//	        if (carro.getId() == id) {
+//	            return carro;
+//	        }
+//	    }
+//	    return null; 
+//	}
+
+	public Carro getCarroById(int id) {
+		for(int x = 0; x < lista.size(); x++) {
+			if(lista.get(x).getId() == id) {
+				return lista.get(x);
+			}
+		}
+		return null;
+	}
+
+
+	
 }

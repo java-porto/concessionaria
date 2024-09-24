@@ -12,6 +12,7 @@ public class Carro {
 	private double preco;
 	private String modelo;
 	private int ano;
+	private int id;
 	private Vendedor vendedor;
 	private Mecanico mecanico;
 	private List<Carro> lista = null;
@@ -19,18 +20,21 @@ public class Carro {
 	public Carro() {
 		
 	}
-	
-	public Carro(String nome, String cor, double preco, String modelo, int ano, Vendedor vendedor, Mecanico mecanico) {
+
+
+	public Carro(String nome, String cor, double preco, String modelo, int ano, int id, Vendedor vendedor,
+			Mecanico mecanico, List<Carro> lista) {
 		super();
 		this.nome = nome;
 		this.cor = cor;
 		this.preco = preco;
 		this.modelo = modelo;
 		this.ano = ano;
+		this.id = id;
 		this.vendedor = vendedor;
 		this.mecanico = mecanico;
+		this.lista = lista;
 	}
-
 
 	public String getNome() {
 		return nome;
@@ -100,9 +104,18 @@ public class Carro {
 	public void setMecanico(Mecanico mecanico) {
 		this.mecanico = mecanico;
 	}
-		
-
 	
+	
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
 	// Método para imprimir todos os atributos
 	public void imprimirAtributos() {
 		System.out.println("Nome: " + this.nome + " Cor: " + this.cor + " Preço: R$" + this.preco +
