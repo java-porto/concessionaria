@@ -68,13 +68,31 @@ public class Teste2 {
 //	}
 		
 		Vendedor vendedor = new Vendedor();
-//		
-//		vendedor.setCargo("Gerente");
-//		vendedor.setId(12345);
-//		vendedor.setNome("Jonas");
-//		vendedor.getLista(vendedor);
-		Carro carro = vendedor.getCarroById(vendedor.getCarroByName("Astra"));
-		System.out.println(carro.getNome());
+		
+		vendedor.setCargo("Gerente");
+		vendedor.setId(12345);
+		vendedor.setNome("Jonas");
+		
+		Mecanico mecanico = new Mecanico();
+		mecanico.setCargo("Supervisor");
+		mecanico.setId(213);
+		mecanico.setNome("Joaquim");
+		
+		Carro carro = new Carro();
+		carro.setAno(2021);
+		carro.setCor("Prata");
+		carro.setMecanico(mecanico);
+		carro.setModelo("Coupe");
+		carro.setNome("Miura");
+		carro.setPreco(87.987);
+		carro.setVendedor(vendedor);
+		
+		if(vendedor.insertCarro(carro)) {
+			vendedor.getLista(vendedor);
+		}else {
+			throw new NullPointerException();
+		}
+//		Carro carro = vendedor.getCarroById(vendedor.getCarroByName("Astra"));
 		
 		
 		

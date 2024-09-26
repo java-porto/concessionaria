@@ -2,6 +2,7 @@ package br.com.concessionaria.teste;
 
 import java.util.Scanner;
 
+import br.com.concessionaria.deptocomercial.Mecanico;
 import br.com.concessionaria.deptocomercial.Vendedor;
 import br.com.concessionaria.showroom.Carro;
 
@@ -16,9 +17,13 @@ public class Teste {
 
 		Vendedor vendedor = new Vendedor();
 		Carro carro;
+		Mecanico mecanico;
+
 		boolean key = true;
 
-		comando: while (key) {
+		comando:
+			
+			while (key) {
 			System.out.println("Selecione apenas uma das opções abaixo:");
 			System.out.println("1 - VENDAS\n2 - FINANCEIRO\n3 - SAC");
 			int opcao = 0;
@@ -59,8 +64,39 @@ public class Teste {
 
 					case 2:
 						System.out.println("Opção escolhida VENDER");
-						key = false;
+						System.out.println("\nBem Vindo ao sistema de Cadastro Nós Te Queremos:");
+						System.out.println("\nInsira abaixo as informações do seu veículo conforme solicitado:");
 
+						carro = new Carro();
+						System.out.println("\nDigite o ano do seu veículo:");
+						carro.setAno(Integer.parseInt(scan.next()));
+						System.out.println("\nDigite a cor do seu veículo:");
+						carro.setCor((scan.next()));
+						System.out.println("\nDigite o modelo do seu veículo:");
+						carro.setModelo((scan.next()));
+						System.out.println("\nDigite o nome do seu veículo:");
+						carro.setNome((scan.next()));
+						System.out.println("\nDigite o preço do seu veículo:");
+						carro.setPreco(Double.parseDouble(scan.next()));
+						
+						System.out.println("\nAs informações estão corretas:\nPodemos prosseguir?");
+						carro.imprimirVenda();
+						System.out.println("\nutilize uma das opções abaixo:\n SIM\n CANCELAR");
+						
+						String respVenda = scan.next();
+						
+						respVenda = respVenda.toUpperCase();
+						
+						if(respVenda.equals("SIM")) {
+							vendedor.insertCarro(carro);
+							System.out.println("\nVeículo inserido com sucesso!");
+						}else if (respVenda.equals("CANCELAR")){
+							System.out.println("\nA SOLICITAÇÂO FOI ENCERRADA, VOCÊ SERÁ REDIRECIONADO PARA O MENU PRINCIPAL! \\n\\n\\n\\n\\n");
+						}else {
+							System.out.println("\nUtilize somente as opções disponíveis:");
+							continue comando;
+						}
+						
 						break;
 
 					case 3:
@@ -74,7 +110,6 @@ public class Teste {
 						break;
 					}
 
-				
 				} else if (opcao == 2) {
 					System.out.println("A opção escolhida foi : " + financeiro);
 

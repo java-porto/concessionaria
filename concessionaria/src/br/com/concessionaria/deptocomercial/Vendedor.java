@@ -150,7 +150,7 @@ public class Vendedor extends Comercial {
 	}
 	
 	public boolean insertCarro(Carro carro) {
-		int idCarro = lista.get(lista.size()).getId()+1;
+		int idCarro = lista.get(lista.size()-1).getId()+1;
 		carro.setId(idCarro);
 		if(lista.add(carro)) {
 			return true;
