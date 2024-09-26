@@ -87,7 +87,7 @@ public class Teste2 {
 		carro.setPreco(870000);
 		carro.setVendedor(vendedor);
 		
-		if (vendedor.insertCarro(carro)) {
+		/*if (vendedor.insertCarro(carro)) {
 			vendedor.getLista(vendedor);
 		} else {
 			throw new NullPointerException();

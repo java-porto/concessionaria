@@ -74,7 +74,7 @@ public class Teste {
 
 		comando:
 			while (key) {
-			System.out.println("Selecione apenas uma das opções abaixo:");
+			System.out.println("Selecione uma das opções abaixo:");
 			System.out.println("1 = VENDAS\n2 - FINANCEIRO\n3 - SAC");
 			int opcao = 0;
 
@@ -93,22 +93,22 @@ public class Teste {
 							vendedor.setCargo("Gerente");
 							vendedor.setId(12345);
 							vendedor.setNome("Jonas");
-							vendedor.getLista(vendedor);
+//							vendedor.getLista(vendedor);
 							System.out.println("Selecione um dos nossos carros: ");
-							opcao = vendedor.getCarroByName(scan.next());
-							carro = vendedor.getCarroById(opcao);
+//							opcao = vendedor.getCarroByName(scan.next());
+//							carro = vendedor.getCarroById(opcao);
 							System.out.println("Veiculo selecionado: ");
-							carro.DadosCarro();
+//							carro.DadosCarro();
 							System.out.println("Em caso positivo, digite Y para comprar\nCaso contrario, digite N");
 							
-							if(scan.next().equals("Y")) {
-								vendedor.removerCarroDaLista(carro);
-							}
+//							if(scan.next().equals("Y")) {
+//								vendedor.removerCarroDaLista(carro);
+//							}
 							break;
 							
 						case 2:
 							System.out.println("Selecionado: Vender");
-							System.out.println("\nBem Vindo ao sistema de Cadastro: ");
+							System.out.println("\nBem Vindo ao sistema de Cadastro!");
 							System.out.println("\nInsira abaixo as informações do seu veículo conforme solicitado: ");
 							
 							carro = new Carro();
@@ -131,15 +131,15 @@ public class Teste {
 							
 							respVenda = respVenda.toUpperCase();
 							
-							if (respVenda.equals("SIM")) {
-								vendedor.insertCarro(carro);
-								System.out.println("\nVeículo inserido com sucesso!");
-							} else if (respVenda.equals("CANCELAR")) {
-								System.out.println("\nA solicitação foi encerrada! Redirecionado ao menu principal");
-							} else {
-								System.out.println("\nUtilize somente as opções disponíveis: ");
-								continue comando;
-							}
+//							if (respVenda.equals("SIM")) {
+//								vendedor.insertCarro(carro);
+//								System.out.println("\nVeículo inserido com sucesso!");
+//							} else if (respVenda.equals("CANCELAR")) {
+//								System.out.println("\nA solicitação foi encerrada! Redirecionado ao menu principal");
+//							} else {
+//								System.out.println("\nUtilize somente as opções disponíveis: ");
+//								continue comando;
+//							}
 							
 							break;
 				
