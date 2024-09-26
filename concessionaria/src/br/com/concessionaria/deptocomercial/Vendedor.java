@@ -7,7 +7,8 @@ import br.com.concessionaria.showroom.Carro;
 
 public class Vendedor extends Comercial {
 
-	private List<Carro> lista = null;
+	private int id;
+	public static List<Carro> lista = null;
 
 	public Vendedor() {
 		lista = new ArrayList<Carro>();
@@ -15,6 +16,7 @@ public class Vendedor extends Comercial {
 		Carro carro = new Carro();
 		Mecanico mecanico = new Mecanico();
 
+		carro.setId(1);
 		carro.setAno(2024);
 		carro.setCor("Branco");
 		carro.setNome("Creta");
@@ -30,6 +32,7 @@ public class Vendedor extends Comercial {
 
 		carro = new Carro();
 		mecanico = new Mecanico();
+		carro.setId(2);
 		carro.setAno(2025);
 		carro.setCor("Prata");
 		carro.setNome("Jeep");
@@ -45,7 +48,7 @@ public class Vendedor extends Comercial {
 
 		carro = new Carro();
 		mecanico = new Mecanico();
-
+		carro.setId(3);
 		carro.setAno(2023);
 		carro.setCor("Vermelho");
 		carro.setNome("Tesla");
@@ -61,6 +64,7 @@ public class Vendedor extends Comercial {
 
 		carro = new Carro();
 		mecanico = new Mecanico();
+		carro.setId(4);
 		carro.setAno(2010);
 		carro.setCor("Preto");
 		carro.setNome("Civic");
@@ -76,6 +80,7 @@ public class Vendedor extends Comercial {
 
 		carro = new Carro();
 		mecanico = new Mecanico();
+		carro.setId(5);
 
 		carro.setAno(2015);
 		carro.setCor("Azul");
@@ -92,7 +97,7 @@ public class Vendedor extends Comercial {
 
 		carro = new Carro();
 		mecanico = new Mecanico();
-
+		carro.setId(6);
 		carro.setAno(2007);
 		carro.setCor("Cinza");
 		carro.setNome("Astra");
@@ -108,7 +113,7 @@ public class Vendedor extends Comercial {
 
 		carro = new Carro();
 		mecanico = new Mecanico();
-
+		carro.setId(7);
 		carro.setAno(2014);
 		carro.setCor("Vermelho");
 		carro.setNome("i30");
@@ -122,19 +127,59 @@ public class Vendedor extends Comercial {
 
 	}
 
-	public void getLista() {
-
-		for (Carro carro : lista) {
-			System.out.println("++++++++SHOW ROOM+++++");
-
-			System.out.println("***********************************");
-			System.out.println("NOME : " + carro.getNome());
-			System.out.println("ANO FABRICAÇÃO : " + carro.getAno());
-			System.out.println("MODELO : " + carro.getModelo());
-			System.out.println("COR : " + carro.getCor());
+	public void getLista(Vendedor vendedor) {
+		System.out.println("++++++++SHOW ROOM+++++");
+		for (int x = 0; x < lista.size() ; x++) {
+			
+			System.out.println("*********CARRO: "+ (lista.get(x).getNome()) +" ****************");
+			System.out.println("ANO FABRICAÇÃO : " + lista.get(x).getAno());
+			System.out.println("MODELO : " + lista.get(x).getModelo());
+			System.out.println("COR : " + lista.get(x).getCor());
+			System.out.println("PREÇO : " + lista.get(x).getPreco());
+			System.out.println("VENDEDOR RESPONSÁVEL : " + vendedor.getNome());
 			System.out.println("***********************************");
 		}
 
+	}
+	
+	public int getCarroByName(String nomeCarro) {
+		for(int x = 0; x < lista.size(); x++) {
+			if(lista.get(x).getNome().equals(nomeCarro)) {
+				return lista.get(x).getId();
+			}
+		}
+		
+		return 0;
+	}
+	
+	//Crie um método que utilize o me´todo getCarroByName para retornar um Objeto Carro
+	// Através do ID.
+	public Carro getCarroById(int id) {
+		for(int x = 0; x < lista.size(); x++) {
+			if(lista.get(x).getId() == id) {
+				return lista.get(x);
+			}
+		}
+		return null;
+	}
+	
+	public boolean removerCarroDaLista(Carro carro) {
+		for(int x = 0; x < lista.size(); x++) {
+			if(lista.get(x) == carro) {
+				return lista.remove(carro);
+			}
+		}
+		return false;
+	}
+	
+	public boolean insertCarro(Carro carro) {
+		
+		int idCarro = lista.get(lista.size()-1).getId()+1;
+		carro.setId(idCarro);
+		if(lista.add(carro)) {
+			return true;
+		}
+		return false;
 	}
 
 }
