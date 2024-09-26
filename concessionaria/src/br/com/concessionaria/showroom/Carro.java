@@ -24,6 +24,10 @@ public class Carro {
 		this.cor + " preço: R$ " + this.preco + " modelo: " + this.modelo + " ano: " + this.ano + "\nCorreto ?");
 	}
 
+	public void DadosVenda() {
+		System.out.println("Dados do veículo: " + this.nome +  " cor: " + 
+		this.cor + " preço: R$ " + this.preco + " modelo: " + this.modelo + " ano: " + this.ano + "\nDados corretos ?");
+	}
 	
 
 	public Carro(String nome, String cor, double preco, String modelo, int ano, int id) {
@@ -82,6 +86,16 @@ public class Carro {
 
 	public void setAno(int ano) {
 		this.ano = ano;
+	}
+
+	public void setMecanico(Mecanico mecanico) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setVendedor(Vendedor vendedor) {
+		// TODO Auto-generated method stub
+		
 	}
 
 		

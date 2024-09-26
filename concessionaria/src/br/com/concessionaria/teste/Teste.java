@@ -108,7 +108,39 @@ public class Teste {
 							
 						case 2:
 							System.out.println("Selecionado: Vender");
-							key = false;
+							System.out.println("\nBem Vindo ao sistema de Cadastro: ");
+							System.out.println("\nInsira abaixo as informações do seu veículo conforme solicitado: ");
+							
+							carro = new Carro();
+							System.out.println("\nDigite o nome do veículo: ");
+							carro.setNome(scan.next());
+							System.out.println("\nDigite a cor do veículo: ");
+							carro.setCor(scan.next());
+							System.out.println("\nDigite o ano do veículo: ");
+							carro.setAno(Integer.parseInt(scan.next()));
+							System.out.println("\nDigite o modelo do veículo: ");
+							carro.setModelo(scan.next());
+							System.out.println("\nDigite o preço do veículo: ");
+							carro.setPreco(Double.parseDouble(scan.next()));
+							System.out.println("\nAs informações estão corretas ?\nPodemos prosseguir ?");
+							carro.DadosVenda();
+							
+							System.out.println("\nUtilize uma das opções abaixo: \nSIM\nCANCELAR");
+							
+							String respVenda = scan.next();
+							
+							respVenda = respVenda.toUpperCase();
+							
+							if (respVenda.equals("SIM")) {
+								vendedor.insertCarro(carro);
+								System.out.println("\nVeículo inserido com sucesso!");
+							} else if (respVenda.equals("CANCELAR")) {
+								System.out.println("\nA solicitação foi encerrada! Redirecionado ao menu principal");
+							} else {
+								System.out.println("\nUtilize somente as opções disponíveis: ");
+								continue comando;
+							}
+							
 							break;
 				
 						case 3:
