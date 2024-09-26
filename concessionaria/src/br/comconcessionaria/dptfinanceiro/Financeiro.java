@@ -1,10 +1,9 @@
 package br.comconcessionaria.dptfinanceiro;
-import br.com.concessionaria.showroom.Carro;
 
-public class Financeiro
+import br.comconcessionaria.showroom.Carro;
+
 public class Financeiro {
-	
-	private Carro carro;
+private Carro carro;
 	
 	public Financeiro() {
 		// TODO Auto-generated constructor stub
@@ -21,6 +20,6 @@ public class Financeiro {
 
 	public void setCarro(Carro carro) {
 		this.carro = carro;
-	}}
-
+	}
+	
 }

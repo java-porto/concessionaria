@@ -3,6 +3,7 @@ package br.comconcessionaria.teste;
 import java.util.Scanner;
 
 import br.comconcessionaria.showroom.Carro;
+import br.concessionaria.comercial.Mecanico;
 import br.concessionaria.comercial.Vendedor;
 
 public class Teste {
@@ -17,6 +18,7 @@ public class Teste {
 		
 		Vendedor vendedor = new Vendedor();
 		Carro carro;
+		Mecanico mecanico;
 
 		boolean key = true;
 
@@ -63,6 +65,41 @@ public class Teste {
 						break;
 					case 2:
 						System.out.println("Opção escolhida VENDER");
+						System.out.println("\nBem Vindo ao sistema de Cadastro Nós Te Queremos:");
+						System.out.println("\nInsira abaixo as informações do seu veículo conforme solicitado:");
+						
+						carro = new Carro();
+
+						System.out.println("\nDigite o ano do veículo:");
+						carro.setAno(Integer.parseInt(scan.next()));
+						System.out.println("\nDigite a cor do veículo:");
+						carro.setCor(scan.next());
+						System.out.println("\nDigite o seu modelo de veículo:");
+						carro.setModelo(scan.next());
+						System.out.println("\nDigite o nome do veículo:");
+						carro.setNome(scan.next());
+						System.out.println("\nDigite o valor desejado pelo veículo:");
+						carro.setPreco(Double.parseDouble(scan.next()));
+						
+						System.out.println("\nAs informações estão corretas:\nPodemos proseeguir?");
+						carro.imprimirVenda();
+						
+						System.out.println("\nutilize uma das opçôes abaixo:\n SIM \n CANCELAR");
+						
+						String respvenda=scan.next();
+						
+						if(respvenda.equals("SIM")){
+							vendedor.insertCarro(carro);
+							System.out.println("\nVeículo inserido com sucesso!");
+						}else if (respvenda.equals("CANCELAR")){
+							System.out.println("\nA SOLICITAÇÃO FOI ENCERRADA. VOCÊ SERÀ REDIRECIONADO "
+									+ "PARA O MENU PRINCIPAL AGORA!\n\n\n\n\n");
+						}else {
+							System.out.println("\nUtilize somente as opções disponíveis:");
+							continue comando;
+		             
+						}
+						
 						key = false;
 						break;
 					case 3:
@@ -95,5 +132,6 @@ public class Teste {
 	}//Final da main
 
 }//Final da class
+                    
 
 

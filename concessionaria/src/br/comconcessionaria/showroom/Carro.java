@@ -28,6 +28,11 @@ public class Carro {
 		System.out.println("Você adquiriu o carro " + this.nome + " de cor " +
 	this.cor + " com o preço R$ "+ this.preco + " modelo " + this.modelo + " do ano " + this.ano+".\nEste correto");
 	}
+	public void imprimirVenda() {
+       System.out.println("Os dados do carro" + this.nome + "de cor" + this.cor + "com o preço R$" + this.preco +"modelo" + this.modelo +
+    		   "do ano"+ this.ano +".\n Esta correto");
+		
+	}
 	
 	public Carro(String nome, String cor, double preco, String modelo, int ano, Vendedor vendedor, Mecanico mecanico) {
 		super();
