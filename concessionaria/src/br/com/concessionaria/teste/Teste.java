@@ -1,5 +1,6 @@
 package br.com.concessionaria.teste;
 
+import br.com.concessionaria.deptocomercial.Mecanico;
 import br.com.concessionaria.deptocomercial.Vendedor;
 import br.com.concessionaria.showroom.Carro;
 
@@ -74,6 +75,7 @@ public class Teste {
 		
 		Vendedor vendedor = new Vendedor();
 		Carro carro;
+		Mecanico mecanico;
 		
 		boolean key = true;
 		
@@ -81,9 +83,8 @@ public class Teste {
 		while(key) {
 			System.out.println("Digite apenas uma das opções abaixo: ");
 			System.out.println("1 - VENDAS\n2 - FINANCEIRO\n3 - SAC");
-			
+	
 			int opcao = 0;
-			
 			
 			try {
 			    opcao = Integer.parseInt(scan.next());
@@ -102,18 +103,63 @@ public class Teste {
 					vendedor.getLista(vendedor);
 					
 					System.out.print("Selecione um de nossos carros: ");
-					opcao = Integer.parseInt(scan.next());
+					opcao = vendedor.getCarroByName(scan.next());
 					
-					carro = vendedor.lista.get(opcao-1);
+					carro = vendedor.getCarroById(opcao);
 					
-					System.out.println("Esse é o veículo que você escolheu? " + carro.getNome());
+					System.out.println("Esse é o veículo que você escolheu? "); carro.imprimirAtributos();
 					
-					key = false;
+					
+					System.out.println("Digite SIM para comprar:\nDigite CANCELAR para desistir.");
+					
+					if(scan.next().equals("SIM")) {
+						System.out.println("Parabéns! O vendedor entrará em contato com você!");
+						vendedor.removerCarroDaLista(carro);
+					}
+					
 					break;
+					
 				case 2:
 					System.out.println("opção escolhida VENDER");
-					key = false;
+					System.out.println("\nBem vindo ao sistema de cadastro nós te queremos: ");
+					System.out.println("\nInsira abaixo os dados do seu veículo: ");
+					
+					carro = new Carro();
+					
+					System.out.println("Digite o nome do seu carro: ");
+					carro.setNome(scan.next());
+					
+					System.out.println("Digite o ano do seu carro: ");
+					carro.setAno(Integer.parseInt(scan.next()));
+					
+					System.out.println("Digite a cor do seu veículo: ");
+					carro.setCor(scan.next());
+					
+					System.out.println("Digite o modelo do seu veículo: ");
+					carro.setModelo(scan.next());
+					
+					System.out.println("Digite o valor desejado pelo carro: ");
+					carro.setPreco(Double.parseDouble(scan.next()));
+					
+					System.out.println("\nAs informações estão corretas? \n\n");
+					carro.imprimirAtributos();
+					
+					System.out.println("Podemos prosseguir? Digite SIM para continuar venda. \nDigite CANCELAR para desistir da venda.");
+					
+					String respVenda = scan.next();
+					
+					respVenda = respVenda.toUpperCase();
+					
+					if(respVenda.equals("SIM")) {
+						vendedor.insertCarro(carro);
+						System.out.println("\n Obrigado Um consultor entrará em contato com você em breve!");
+					} else if(respVenda.equals("CANCELAR")) {
+						System.out.println("Sua solicitação foi cancelada. Você retornará para o menu principal.\n\n\n");
+					} else {
+						System.out.println("Digite uma opção válida (SIM ou CANCELAR)!!!");
+					}
 					break;
+					
 				case 3:
 					System.out.println("opção escolhida REPRESENTANTE");
 					key = false;
@@ -136,6 +182,7 @@ public class Teste {
 			  }
 			}  catch (NumberFormatException e) {
 				System.out.println("Somente números podem ser digitados!!!");
+				scan.close();
 				continue comando;
 			}
 			

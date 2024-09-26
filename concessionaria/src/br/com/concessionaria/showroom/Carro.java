@@ -119,7 +119,15 @@ public class Carro {
 	// Método para imprimir todos os atributos
 	public void imprimirAtributos() {
 		System.out.println("Nome: " + this.nome + " Cor: " + this.cor + " Preço: R$" + this.preco +
-				" Modelo: " + this.modelo + " Ano: " + this.ano + ".\nParabéns!");
+				" Modelo: " + this.modelo + " Ano: " + this.ano + ".\nEstá correto?");
 
 	}
+	
+	
+	public void imprimirVenda() {
+		System.out.println("Os dados do carro: " + this.nome + " Cor: " + this.cor + " Preço: R$" + this.preco +
+				" Modelo: " + this.modelo + " Ano: " + this.ano + ".\nEstão corretos?");
+
+	}
+	
 }
