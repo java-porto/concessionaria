@@ -2,6 +2,10 @@ package br.com.concessionaria.teste;
 
 import java.util.Scanner;
 
+//NomeDaClassDAO = "D" - Data "A" - Assets "O" - Object
+
+//MVC - Model View Control
+
 import br.com.concessionaria.deptocomercial.Mecanico;
 import br.com.concessionaria.deptocomercial.Vendedor;
 import br.com.concessionaria.showroom.Carro;
