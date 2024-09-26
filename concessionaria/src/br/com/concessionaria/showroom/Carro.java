@@ -19,9 +19,16 @@ public class Carro {
 	
 	public void imprimir() {
 		System.out.println("Você escolheu o carro " + this.nome + " de cor " +
-	this.cor + " com o preço R$ "+ this.preco + " modelo " + this.modelo + " do ano " + this.ano+".\nEstá correto?");
+	this.cor + " com o preço R$ "+ this.preco + " modelo " + this.modelo + 
+	" do ano " + this.ano+".\nEstá correto?");
 	}
 
+	public void imprimirVenda() {
+		System.out.println("Os dados do carro " + this.nome + " de cor " +
+	this.cor + " com o preço R$ "+ this.preco + " modelo " + this.modelo + 
+	" do ano " + this.ano+".\nEstão corretos?");
+	}
+	
 	public Carro(String nome, String cor, double preco, String modelo, int ano, int id, Vendedor vendedor,
 			Mecanico mecanico) {
 		super();
