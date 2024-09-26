@@ -16,7 +16,7 @@ public class Teste {
 		String sac = "SAC";
 
 		Vendedor vendedor = new Vendedor();
-		Carro carro;
+		Carro carro = null;
 		Mecanico  mecanico;
 
 		boolean key = true;
@@ -43,13 +43,13 @@ public class Teste {
 					vendedor.setCargo("Gerente");
 					vendedor.setId(1234);
 					vendedor.setNome("Joca");
-					vendedor.getLista(vendedor);
+//					vendedor.getLista(vendedor);
 
 					System.out.println("Selecione um de nossos carros:");
 
-					opcao = vendedor.getCarroByName(scan.next());
+//					opcao = vendedor.getCarroByName(scan.next());
 
-					carro = vendedor.getCarroById(opcao);
+//					carro = vendedor.getCarroById(opcao);
 
 					System.out.println("Esse é o veículo que você escolheu? ");
 					carro.imprimir();
@@ -57,7 +57,7 @@ public class Teste {
 					System.out.println("Digite SIM para comprar:\nDigite CANCELAR para desistir.");
 
 					if (scan.next().equals("SIM")) {
-						vendedor.removerCarroDaLista(carro);
+//						vendedor.removerCarroDaLista(carro);
 					}
 
 					break;
@@ -88,7 +88,7 @@ public class Teste {
 				    respVenda = respVenda.toUpperCase();
 
 				   if(respVenda.equals("SIM")) {
-					   vendedor.insertCarro(carro);
+//					   vendedor.insertCarro(carro);
 					   System.out.println("\nVeículo inserido com sucesso!");
 				   }else if (respVenda.equals("CANCELAR")) {
 					   System.out.println("\nA solicitação foi ENCERRADA. Você será redirecionado"

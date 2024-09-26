@@ -94,11 +94,11 @@ public class teste2 {
    carro.setPreco(87.986d);
    carro.setVendedor(vendedor);
     
-    if (vendedor.insertCarro(carro)) {
-    	vendedor.getLista(vendedor);
-    }else {
-    	throw new NullPointerException();
-    }
+//    if (vendedor.insertCarro(carro)) {
+//    	vendedor.getLista(vendedor);
+//    }else {
+//    	throw new NullPointerException();
+//    }
     
 // Carro carro = vendedor.getCarroById(vendedor.getCarroByName("Mustang"));
 	
