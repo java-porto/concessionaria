@@ -133,11 +133,16 @@ public class Carro {
 			
 	public void imprimir() {
 		System.out.println("Você escolheu o veículo: " + this.nome + ", de cor: " +
-	this.cor + ", valor: R$ " + this.preco + ", modelo: " + this.modelo + ", do ano: " +this.ano+".\nEstá correto?");
+	this.cor + ", valor: R$ " + this.preco + ", modelo: " + this.modelo + 
+	", do ano: " +this.ano+".\nEstá correto?");
 	}
 
+	public void imprimirVenda() {
+		System.out.println("Os dados do carro: " + this.nome + ", de cor: " +
+	this.cor + ", valor: R$ " + this.preco + ", modelo: " + this.modelo +
+	", do ano: " +this.ano+".\nEstão corretos?");
+	}
 
-
-}
+}//final da class
 
 

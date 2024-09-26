@@ -2,6 +2,7 @@ package br.com.concessionaria.teste;
 
 import java.util.Scanner;
 
+import br.com.concessionaria.dptocomercial.Mecanico;
 import br.com.concessionaria.dptocomercial.Vendedor;
 import br.com.concessionaria.showroom.Carro;
 
@@ -16,6 +17,7 @@ public class Teste {
 
 		Vendedor vendedor = new Vendedor();
 		Carro carro;
+		Mecanico  mecanico;
 
 		boolean key = true;
 
@@ -61,7 +63,42 @@ public class Teste {
 					break;
 				case 2:
 					System.out.println("Opção escolhida VENDER");
-					key = false;
+					System.out.println("\nBem Vindo ao sistema de cadastro, nós te queremos:");
+					System.out.println("\nInsira abaixo as informações do seu veículo conforme solicitado.");
+					
+					carro = new Carro();
+					System.out.println("\nDigite o ano do veículo:");
+					carro.setAno(Integer.parseInt(scan.next()));
+				    System.out.println("\nDigite a cor do veículo:");
+				    carro.setCor(scan.next());
+					System.out.println("\nDigite o seu modelo do veículo:");
+					carro.setModelo(scan.next());
+					System.out.println("\nDigite o nome do veículo:");
+					carro.setNome(scan.next());
+					System.out.println("\nDigite o valor desejado pelo veículo:");
+			        carro.setPreco(Double.parseDouble(scan.next()));
+				    
+				    System.out.println("\nAs informações estão corretas:/nPodemos prosseguir?");
+				    carro.imprimirVenda();
+				    
+				    System.out.println("\nUtilize uma das opções abaixo:\n SIM \n CANCELAR");
+				    
+				    String respVenda =scan.next();
+				    
+				    respVenda = respVenda.toUpperCase();
+
+				   if(respVenda.equals("SIM")) {
+					   vendedor.insertCarro(carro);
+					   System.out.println("\nVeículo inserido com sucesso!");
+				   }else if (respVenda.equals("CANCELAR")) {
+					   System.out.println("\nA solicitação foi ENCERRADA. Você será redirecionado"
+					   		+ " para o menu principal.");
+				   }else {
+					   System.out.println("\nUtilize somente as opções disponiveis");
+					   continue comando;
+				   }
+				  
+					
 					break;
 				case 3:
 					System.out.println("Opção escolhida REPRESENTANTE");
