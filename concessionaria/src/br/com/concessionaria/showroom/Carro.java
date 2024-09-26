@@ -97,4 +97,9 @@ public class Carro {
 				+ this.preco + "\nModelo: " + this.modelo + " \nAno: " + this.ano + "\nEstá correto?");
 	}
 	
+	public void imprimirFichaCarroVenda() {
+		System.out.println("Dados do carro:\nNome: " + this.nome + "\nCor: " + this.cor + "\nValor: R$"
+				+ this.preco + "\nModelo: " + this.modelo + " \nAno: " + this.ano + "\nEstá correto?");
+	}
+	
 }

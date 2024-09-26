@@ -23,7 +23,7 @@ public class Vendedor extends Comercial {
 		carros.setAno(2024);
 		carros.setId(25422);
 		carros.setCor("Branco");
-		carros.setPreco(119.990);
+		carros.setPreco(119.990d);
 		carros.setModelo("SUV");
 		mecanico.setId(1234);
 		mecanico.setNome("Jonas");
@@ -39,7 +39,7 @@ public class Vendedor extends Comercial {
 		carros.setAno(2013);
 		carros.setId(45487);
 		carros.setCor("Preto");
-		carros.setPreco(6.000);
+		carros.setPreco(6.000d);
 		carros.setModelo("SUV Pequeno");
 		mecanico.setId(6969);
 		mecanico.setNome("Felphis");
@@ -55,7 +55,7 @@ public class Vendedor extends Comercial {
 		carros.setAno(2023);
 		carros.setId(54177);
 		carros.setCor("Vermelho");
-		carros.setPreco(225.000);
+		carros.setPreco(225.000d);
 		carros.setModelo("SEDÃ");
 		mecanico.setId(3342);
 		mecanico.setNome("Jenifer");
@@ -71,7 +71,7 @@ public class Vendedor extends Comercial {
 		carros.setAno(2025);
 		carros.setId(54412);
 		carros.setCor("Amarelo");
-		carros.setPreco(325.000);
+		carros.setPreco(325.000d);
 		carros.setModelo("SUV");
 		mecanico.setId(6255);
 		mecanico.setNome("Roberta");
@@ -87,7 +87,7 @@ public class Vendedor extends Comercial {
 		carros.setAno(2021);
 		carros.setId(264645);
 		carros.setCor("Prata");
-		carros.setPreco(75.000);
+		carros.setPreco(75.000d);
 		carros.setModelo("HATCH");
 		mecanico.setId(6244);
 		mecanico.setNome("Clayton");
@@ -152,7 +152,7 @@ public class Vendedor extends Comercial {
 	}
 	
 	public boolean insertCarro(Carro carro) {
-		int idCarro = listaCarro.get(listaCarro.size()).getId()+1;
+		int idCarro = listaCarro.get(listaCarro.size()-1).getId()+1;
 		carro.setId(idCarro);
 		if(listaCarro.add(carro)) {
 			return true;

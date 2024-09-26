@@ -2,6 +2,7 @@ package br.com.concessionaria.teste;
 
 import java.util.Scanner;
 
+import br.com.concessionaria.deptocomercial.Mecanico;
 import br.com.concessionaria.deptocomercial.Vendedor;
 import br.com.concessionaria.showroom.Carro;
 
@@ -84,6 +85,8 @@ public class Teste {
 		Vendedor vendedor = new Vendedor();
 		
 		Carro carro;
+		
+		Mecanico mecanico;
 
 		boolean key = true;
 
@@ -127,10 +130,44 @@ public class Teste {
 						
 						break;
 
-					case 2:
-						System.out.println("A opção escolhida foi Vender");
-						key = false;
+						case 2:
+						System.out.println("A opção escolhida foi Vender\n\n");
+						System.out.println("Bem vindo ao sistema de cadastro Nós te Queremos:\n\n");
+						System.out.println("Insira abaixo as informações do seu veículo:\n\n");
+						carro = new Carro();
+						System.out.println("Digite o nome do seu carro:");
+						carro.setNome(scan.next());
+						System.out.println("Digite o ano do seu carro:");
+						carro.setAno(Integer.parseInt(scan.next()));
+						System.out.println("Digite a cor do seu carro:");
+						carro.setCor(scan.next());
+						System.out.println("Digite o modelo do seu carro:");
+						carro.setModelo(scan.next());
+						System.out.println("Digite o valor desejado pelo carro:");
+						carro.setPreco(Double.parseDouble(scan.next()));
+						
+						
+						System.out.println("As informações estão corretas?\n\n");
+						
+						carro.imprimirFichaCarroVenda();
+						
+						System.out.println("Podemos proseguir?\n\nDigite SIM para continuar venda.\nDigite CANCELAR para desistir da venda.");
+						
+						String respVenda = scan.next();
+						
+						respVenda = respVenda.toUpperCase();
+						
+						if(respVenda.equals("SIM")) {
+							vendedor.insertCarro(carro);
+							System.out.println("Obrigado! Um consultor entrará em contato com você em breve!");
+						}else if(respVenda.equals("CANCELAR")) {
+							System.out.println("Sua solicitação foi cancelada. Você retornará ao menu incial.\n\n\n\n");
+						}else {
+							System.out.println("utilize somente as opções disponiveis.");
+						}
 						break;
+						
+						
 					case 3:
 						System.out.println("A opção escolhida foi representante");
 						key = false;
@@ -152,6 +189,7 @@ public class Teste {
 
 			} catch (NumberFormatException e) {
 				System.out.println("Somente números podem ser digitados:");
+				scan.close();
 				continue comando;
 			} // final do try e catch
 
