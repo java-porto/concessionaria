@@ -8,12 +8,12 @@ import br.com.concessionaria.dptocomercial.Vendedor;
 import br.com.concessionaria.showroom.Carro;
 
 public class CarroDAO {
-
-	
 	
 	public static List<Carro> lista = null;
 	
 	public CarroDAO() {
+		
+		if(lista == null) {
 		lista = new ArrayList<Carro>();
 
 		Carro carro = new Carro();
@@ -92,42 +92,19 @@ public class CarroDAO {
 		mecanico.setCargo("Mecânico 5");
 		carro.setMecanico(mecanico);
 		lista.add(carro);
-
-	}
-
-	public void getLista(Vendedor vendedor) {
-		System.out.println("***SHOW ROOM***");
-		for (int x = 0; x < lista.size(); x++) {
-
-			System.out.println("CARRO: " + (lista.get(x).getNome()) + "");
-			System.out.println("*******************************");
-			System.out.println("ANO DE FABRICAÇÃO : " + lista.get(x).getAno());
-			System.out.println("MODELO : " + lista.get(x).getModelo());
-			System.out.println("COR : " + lista.get(x).getCor());
-			System.out.println("PREÇO : " + lista.get(x).getPreco());
-			System.out.println("VENDEDOR RESPONSÁVEL: " + vendedor.getNome());
-			System.out.println("*******************************");
-
 		}
-
 	}
 
-	public int getCarroByName(String nomeCarro) {
-		for (int x = 0; x < lista.size(); x++) {
-			if (lista.get(x).getNome().equals(nomeCarro)) {
-				return lista.get(x).getId();
-
-			}
-
-		}
-
-		return 0;
+	public List<Carro> select() {
+		return lista;
 	}
+
+	
 
 	// crie um método que utilize o método getCarroByName para retornar um objeto
 	// carro atavés do id
 
-	public Carro getCarroById(int id) {
+	public Carro select(int id) {
 		for (int x = 0; x < lista.size(); x++) {
 			if (lista.get(x).getId() == id) {
 				return lista.get(x);
@@ -139,7 +116,7 @@ public class CarroDAO {
 
 	}
 
-	public boolean removerCarroDaLista(Carro carro) {
+	public boolean delete(Carro carro) {
 		for (int x = 0; x < lista.size(); x++) {
 			if (lista.get(x) == carro) {
 				return lista.remove(carro);
@@ -149,7 +126,7 @@ public class CarroDAO {
 		return false;
 	}
 
-	public boolean insertCarro(Carro carro) {
+	public boolean insert(Carro carro) {
 		
 		int idCarro = lista.get(lista.size()-1).getId()+1; 
 		carro.setId(idCarro);
@@ -159,6 +136,6 @@ public class CarroDAO {
 		return false;
 	}
 
-	}
+	}//final da class
 
 
