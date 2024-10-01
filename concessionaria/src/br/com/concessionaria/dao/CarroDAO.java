@@ -4,21 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.concessionaria.deptocomercial.Mecanico;
-import br.com.concessionaria.deptocomercial.Vendedor;
 import br.com.concessionaria.showroom.Carro;
 
 public class CarroDAO {
-	
+
 	public static List<Carro> listaCarro = null;
 
 	public CarroDAO() {
-			
+
+		if (listaCarro == null) {
+
 			listaCarro = new ArrayList<Carro>();
-			
+
 			Carro carros = new Carro();
 			Mecanico mecanico = new Mecanico();
-			
-			//Carro 1
+
+			// Carro 1
 			carros.setNome("Creta");
 			carros.setAno(2024);
 			carros.setId(25422);
@@ -30,11 +31,11 @@ public class CarroDAO {
 			mecanico.setCargo("Supevisor");
 			carros.setMecanico(mecanico);
 			listaCarro.add(carros);
-			
-			//Carro 2
+
+			// Carro 2
 			carros = new Carro();
 			mecanico = new Mecanico();
-			
+
 			carros.setNome("Fox");
 			carros.setAno(2013);
 			carros.setId(45487);
@@ -46,11 +47,11 @@ public class CarroDAO {
 			mecanico.setCargo("Mecanico 1");
 			carros.setMecanico(mecanico);
 			listaCarro.add(carros);
-			
-			//Carro 3
+
+			// Carro 3
 			carros = new Carro();
 			mecanico = new Mecanico();
-			
+
 			carros.setNome("Tesla");
 			carros.setAno(2023);
 			carros.setId(54177);
@@ -62,11 +63,11 @@ public class CarroDAO {
 			mecanico.setCargo("Mecanico 2");
 			carros.setMecanico(mecanico);
 			listaCarro.add(carros);
-			
-			//Carro 4
+
+			// Carro 4
 			carros = new Carro();
 			mecanico = new Mecanico();
-			
+
 			carros.setNome("Ford");
 			carros.setAno(2025);
 			carros.setId(54412);
@@ -78,11 +79,11 @@ public class CarroDAO {
 			mecanico.setCargo("Mecanico 3");
 			carros.setMecanico(mecanico);
 			listaCarro.add(carros);
-			
-			//Carro 5
+
+			// Carro 5
 			carros = new Carro();
 			mecanico = new Mecanico();
-			
+
 			carros.setNome("Celta");
 			carros.setAno(2021);
 			carros.setId(264645);
@@ -94,70 +95,44 @@ public class CarroDAO {
 			mecanico.setCargo("Mecanico 2");
 			carros.setMecanico(mecanico);
 			listaCarro.add(carros);
+
 		}
+	}
+
+	public List<Carro> select() {
+
+		return listaCarro;
 		
-		public void getListaCarro(Vendedor vendedor) {
-			
-			System.out.println("+++++SHOW ROOM+++++");
-			
-			for (int x = 0; x < listaCarro.size(); x++) {
-						
-				System.out.println("\n-----------------------------------\n");
+	}
+
+	public Carro select(int id) {
+		for (int x = 0; x < listaCarro.size(); x++) {
+			if (listaCarro.get(x).getId() == id) {
 				
-				System.out.println("Carro: " + (listaCarro.get(x).getNome()));
-				
-				System.out.println("Ano: " + listaCarro.get(x).getAno());
-				
-				System.out.println("Modelo: " + listaCarro.get(x).getModelo());
-				
-				System.out.println("Cor: " + listaCarro.get(x).getCor());
-				
-				System.out.println("Preço: " + listaCarro.get(x).getPreco());
-				
-				System.out.println("Vendedor: " + vendedor.getNome());
-				
+				return listaCarro.get(x);
 			}
 		}
-		
-		public int getCarrobyName(String nomeCarro) {
-			for(int x = 0; x < listaCarro.size(); x++) {
-				if(listaCarro.get(x).getNome().equals(nomeCarro)) { //.equals é um metodo que se compara o conteúdo do objeto
-					return listaCarro.get(x).getId();
-				}
+
+		return null;
+	}
+
+	public boolean delete(Carro carro) {
+		for (int x = 0; x < listaCarro.size(); x++) {
+			if (listaCarro.get(x) == carro) {
+				return listaCarro.remove(carro);
 			}
-			
-			return 0;
 		}
-		
-		//Crie um metodo que utilize o metodo getCarroByName para retornar um objeto carro atravez do ID
-		
-		public Carro getCarroById(int id) {
-			for(int x = 0; x < listaCarro.size(); x++) {
-				if(listaCarro.get(x).getId() == id) {
-					return listaCarro.get(x);
-				}
-			}
-			
-			return null;
+
+		return false;
+	}
+
+	public boolean insert(Carro carro) {
+		int idCarro = listaCarro.get(listaCarro.size() - 1).getId() + 1;
+		carro.setId(idCarro);
+		if (listaCarro.add(carro)) {
+			return true;
 		}
-		
-		public boolean removeCarroDaListaCarro(Carro carro) {
-			for(int x = 0; x < listaCarro.size(); x++) {
-				if(listaCarro.get(x) == carro) {
-					return listaCarro.remove(carro);
-				}
-			}
-			
-			return false;
-		}
-		
-		public boolean insertCarro(Carro carro) {
-			int idCarro = listaCarro.get(listaCarro.size()-1).getId()+1;
-			carro.setId(idCarro);
-			if(listaCarro.add(carro)) {
-				return true;
-			}
-			return false;
+		return false;
 	}
 
 }
