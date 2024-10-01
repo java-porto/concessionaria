@@ -22,15 +22,6 @@ public class Carro {
 
 	}
 
-	public void imprimir() {
-		System.out.println("Você escolheu o veículo " + this.nome + " de cor " + this.cor + " por R$ " + this.preco
-				+ " modelo " + this.modelo + " do ano " + this.ano+".\nEstá correto?");
-	}
-	
-	public void imprimirVenda() {
-		System.out.println("Os dados do carro " + this.nome + " de cor " + this.cor + " por R$ " + this.preco
-				+ " modelo " + this.modelo + " do ano " + this.ano+".\nEstão corretos?");
-	}
 	
 	public Carro(String nome, String cor, double preco, String modelo, int ano, Vendedor vendedor, Mecanico mecanico) {
 		super();
@@ -105,7 +96,16 @@ public class Carro {
 	public void setMecanico(Mecanico mecanico) {
 		this.mecanico = mecanico;
 	}
-
+	
+	public void imprimir() {
+		System.out.println("Você escolheu o veículo " + this.nome + " de cor " + this.cor + " por R$ " + this.preco
+				+ " modelo " + this.modelo + " do ano " + this.ano+".\nEstá correto?");
+	}
+	
+	public void imprimirVenda() {
+		System.out.println("Os dados do carro " + this.nome + " de cor " + this.cor + " por R$ " + this.preco
+				+ " modelo " + this.modelo + " do ano " + this.ano+".\nEstão corretos?");
+	}
 	
 
 
