@@ -22,7 +22,7 @@ public class CarroDAO {
 			// Carro 1
 			carros.setNome("Creta");
 			carros.setAno(2024);
-			carros.setId(25422);
+			carros.setId(1);
 			carros.setCor("Branco");
 			carros.setPreco(119.990);
 			carros.setModelo("SUV");
@@ -38,7 +38,7 @@ public class CarroDAO {
 
 			carros.setNome("Fox");
 			carros.setAno(2013);
-			carros.setId(45487);
+			carros.setId(2);
 			carros.setCor("Preto");
 			carros.setPreco(6.000);
 			carros.setModelo("SUV Pequeno");
@@ -54,7 +54,7 @@ public class CarroDAO {
 
 			carros.setNome("Tesla");
 			carros.setAno(2023);
-			carros.setId(54177);
+			carros.setId(3);
 			carros.setCor("Vermelho");
 			carros.setPreco(225.000);
 			carros.setModelo("SEDÃ");
@@ -70,7 +70,7 @@ public class CarroDAO {
 
 			carros.setNome("Ford");
 			carros.setAno(2025);
-			carros.setId(54412);
+			carros.setId(4);
 			carros.setCor("Amarelo");
 			carros.setPreco(325.000);
 			carros.setModelo("SUV");
@@ -86,7 +86,7 @@ public class CarroDAO {
 
 			carros.setNome("Celta");
 			carros.setAno(2021);
-			carros.setId(264645);
+			carros.setId(5);
 			carros.setCor("Prata");
 			carros.setPreco(75.000);
 			carros.setModelo("HATCH");
@@ -132,6 +132,17 @@ public class CarroDAO {
 		if (listaCarro.add(carro)) {
 			return true;
 		}
+		return false;
+	}
+	
+	public boolean update(int id, Carro carro) {
+		for(int x = 0; x < listaCarro.size(); x++) {
+			if (listaCarro.get(x).getId() == id) {
+				listaCarro.add(x, carro);
+				return true;
+			}
+		}
+		
 		return false;
 	}
 
