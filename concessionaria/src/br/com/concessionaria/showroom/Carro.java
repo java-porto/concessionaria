@@ -1,8 +1,5 @@
 package br.com.concessionaria.showroom;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import br.com.concessionaria.deptocomercial.Mecanico;
 import br.com.concessionaria.deptocomercial.Vendedor;
 
