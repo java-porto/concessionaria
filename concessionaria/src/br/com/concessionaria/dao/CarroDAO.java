@@ -163,5 +163,16 @@ public class CarroDAO {
 		}
 		return false;
 	}
-
+	
+	
+	public boolean update(int id, Carro carro) {
+		for (int i = 0; i < lista.size(); i++) {
+			if(lista.get(i).getId() == id) {
+				lista.add(i, carro);
+				return true;
+			}
+		}
+		return false;
+	}
+	
 }
