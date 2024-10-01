@@ -48,8 +48,36 @@ public class CarroDAO {
 		lista.add(carro);	
 		
 		
+		carro = new Carro();
+		vendedor = new Vendedor();
+		
+		//Carro 3
+		carro.setNome("Tesla");
+		carro.setAno(2008);
+		carro.setId(3);
+		carro.setCor("Preto");
+		carro.setPreco(90.000);
+		carro.setModelo("SUV");
+		vendedor.setNome("Pedro");
+		vendedor.setCargo("Vendedor 2");
+		carro.setVendedor(vendedor);
+		lista.add(carro);
 		
 		
+		carro = new Carro();
+		vendedor = new Vendedor();
+		
+		//Carro 3
+		carro.setNome("Jeep");
+		carro.setAno(2023);
+		carro.setId(4);
+		carro.setCor("Prata");
+		carro.setPreco(70.000);
+		carro.setModelo("Sedã");
+		vendedor.setNome("Henrique");
+		vendedor.setCargo("Gerente");
+		carro.setVendedor(vendedor);
+		lista.add(carro);
 		
 		
 		
