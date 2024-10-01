@@ -1,5 +1,8 @@
 package br.com.concessionaria.teste;
 
+import java.util.List;
+
+import br.com.concessionaria.dao.CarroDAO;
 import br.com.concessionaria.deptocomercial.Mecanico;
 import br.com.concessionaria.deptocomercial.Vendedor;
 import br.com.concessionaria.showroom.Carro;
@@ -59,42 +62,78 @@ public class Teste2 {
 		//}
 		
 		
-		Vendedor vendedor = new Vendedor();
+//		Vendedor vendedor = new Vendedor();
+//		
+//		vendedor.setCargo("Gerente");
+//		vendedor.setId(1234);
+//		vendedor.setNome("Felipe");
+//		vendedor.getLista(vendedor);
+//		
+//		//Carro carro = vendedor.getCarroById(vendedor.getCarroByName("Nissan"));
+//		
+//		Mecanico mecanico = new Mecanico();
+//		mecanico.setCargo("SUPERVISOR");
+//		mecanico.setId(232232);
+//		mecanico.setNome("Joaquim");
+//		
+//		Carro carro = new Carro();
+//		carro.setAno(2021);
+//		carro.setCor("PRETA");
+//		carro.setId(1);
+//		carro.setMecanico(mecanico);
+//		carro.setModelo("Coupê");
+//		carro.setNome("Miura");
+//		carro.setPreco(87.986d);
+//		carro.setVendedor(vendedor);
 		
-		vendedor.setCargo("Gerente");
-		vendedor.setId(1234);
-		vendedor.setNome("Felipe");
-		vendedor.getLista(vendedor);
+//		
+//		carro.imprimirAtributos();
+//		
+//		if(vendedor.insertCarro(carro)) {
+//			vendedor.getLista(vendedor);
+//		}else {
+//			throw new NullPointerException();
+//		}
+//		
+//		
+		CarroDAO cdao = new CarroDAO();
+
 		
-		//Carro carro = vendedor.getCarroById(vendedor.getCarroByName("Nissan"));
+		Carro carro = cdao.select(1);
+		Carro carro2 = new Carro();
+		carro2.setNome(carro.getNome());
+		carro2.setAno(carro.getAno());
+		System.out.println(carro2.getNome());
 		
-		Mecanico mecanico = new Mecanico();
-		mecanico.setCargo("SUPERVISOR");
-		mecanico.setId(232232);
-		mecanico.setNome("Joaquim");
+		Carro carro3 = new Carro();
+		carro3.setNome("Corolla");
+		carro3.setAno(2023);
+		carro3.setModelo("Sedã");
+		cdao.insert(carro3);
 		
-		Carro carro = new Carro();
-		carro.setAno(2021);
-		carro.setCor("PRETA");
-		carro.setId(1);
-		carro.setMecanico(mecanico);
-		carro.setModelo("Coupê");
-		carro.setNome("Miura");
-		carro.setPreco(87.986d);
-		carro.setVendedor(vendedor);
+		cdao.delete(carro);
 		
 		
-		carro.imprimirAtributos();
+		List<Carro> lista = cdao.select();
 		
-		if(vendedor.insertCarro(carro)) {
-			vendedor.getLista(vendedor);
-		}else {
-			throw new NullPointerException();
+		for (Carro car: lista) {
+			System.out.println("ID " + car.getId());
+			System.out.println("Nome " + car.getNome());
 		}
 		
+		Carro carro4 = cdao.select(4);
+		carro4.imprimirAtributos();
 		
+		carro.setAno(2008);
+		carro.setCor("Prata");
+		carro.setModelo("SUV");
 		
-		
+		if(cdao.update(carro4.getId(), carro4)) {
+			
+			carro4.imprimirAtributos();
+		} else {
+			System.out.println("Ocorreu um erro durante a atualização!");
+		}
 		
 	}
 
