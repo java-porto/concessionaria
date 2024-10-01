@@ -1,5 +1,8 @@
 package br.com.concessionaria.teste;
 
+import java.util.List;
+
+import br.com.concessionaria.dao.CarroDAO;
 import br.com.concessionaria.deptocomercial.Mecanico;
 import br.com.concessionaria.deptocomercial.Vendedor;
 import br.com.concessionaria.showroom.Carro;
@@ -67,34 +70,79 @@ public class Teste2 {
 //				
 //	}
 		
-		Vendedor vendedor = new Vendedor();
+//		Vendedor vendedor = new Vendedor();
+//		
+//		vendedor.setCargo("Gerente");
+//		vendedor.setId(12345);
+//		vendedor.setNome("Jonas");
+//		
+//		Mecanico mecanico = new Mecanico();
+//		mecanico.setCargo("Supervisor");
+//		mecanico.setId(213);
+//		mecanico.setNome("Joaquim");
+//		
+//		Carro carro = new Carro();
+//		carro.setAno(2021);
+//		carro.setCor("Prata");
+//		carro.setMecanico(mecanico);
+//		carro.setModelo("Coupe");
+//		carro.setNome("Miura");
+//		carro.setPreco(87.987);
+//		carro.setVendedor(vendedor);
+//		
+////		if(carro.insertCarro) {
+////			vendedor.getLista(vendedor);
+////		}else {
+////			throw new NullPointerException();
+////		}
+////		Carro carro = vendedor.getCarroById(vendedor.getCarroByName("Astra"));
+//		
+//		
 		
-		vendedor.setCargo("Gerente");
-		vendedor.setId(12345);
-		vendedor.setNome("Jonas");
 		
-		Mecanico mecanico = new Mecanico();
-		mecanico.setCargo("Supervisor");
-		mecanico.setId(213);
-		mecanico.setNome("Joaquim");
+		CarroDAO cdao = new CarroDAO();
 		
-		Carro carro = new Carro();
-		carro.setAno(2021);
-		carro.setCor("Prata");
-		carro.setMecanico(mecanico);
-		carro.setModelo("Coupe");
-		carro.setNome("Miura");
-		carro.setPreco(87.987);
-		carro.setVendedor(vendedor);
+		Carro carro = cdao.select(2);
 		
-//		if(carro.insertCarro) {
-//			vendedor.getLista(vendedor);
-//		}else {
-//			throw new NullPointerException();
-//		}
-//		Carro carro = vendedor.getCarroById(vendedor.getCarroByName("Astra"));
+		Carro car = new Carro();
+		car.setNome("Tesla");
+		car.setAno(2010);
+		car.setCor("Preto");
+		System.out.println(carro.getNome());
+		cdao.insert(car);
+		
+		cdao.delete(car);
+		
+		List<Carro> lista = cdao.select();
 		
 		
+		
+		for (Carro carro2 : lista) {
+			System.out.println("Ano " + carro2.getAno());
+			System.out.println("Nome " + carro2.getNome());
+			System.out.println("Cor " + carro2.getCor());
+			System.out.println("Modelo " + carro2.getModelo());
+			System.out.println("Id " + carro2.getId());
+			System.out.println("Preço " + carro2.getPreco());
+			
+			System.out.println();
+		}
+		
+		
+		Carro carro3 = cdao.select(3);
+		carro3.imprimir();
+		
+		carro3.setAno(1990);
+		carro3.setCor("Preto");
+		carro3.setPreco(31.987);
+		
+		if(cdao.update(carro3.getId(), carro3)) {
+			
+			carro3.imprimir();
+		}else {
+			System.out.println("Ocorreu um erro durante a atualização!");
+		}
 		
 	}
+	
 }
