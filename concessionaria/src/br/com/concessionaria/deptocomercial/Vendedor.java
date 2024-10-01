@@ -13,4 +13,5 @@ public class Vendedor extends Comercial{
 	public Vendedor() {
 		
 	}
+
 }

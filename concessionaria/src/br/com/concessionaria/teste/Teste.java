@@ -77,6 +77,7 @@ public class Teste {
 		Carro carro;
 		Mecanico mecanico;
 		
+		
 		boolean key = true;
 		
 		comando:
