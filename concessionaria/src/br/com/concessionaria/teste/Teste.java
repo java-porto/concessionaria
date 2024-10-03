@@ -101,10 +101,10 @@ public class Teste {
 					vendedor.setCargo("Gerente");
 					vendedor.setId(1234);
 					vendedor.setNome("Felipe");
-					vendedor.getLista(vendedor);
+					vendedor.getListaCarro(vendedor);
 					
 					System.out.print("Selecione um de nossos carros: ");
-					opcao = vendedor.getCarroByName(scan.next());
+					opcao = vendedor.getCarrobyName(scan.next());
 					
 					carro = vendedor.getCarroById(opcao);
 					
@@ -115,7 +115,7 @@ public class Teste {
 					
 					if(scan.next().equals("SIM")) {
 						System.out.println("Parabéns! O vendedor entrará em contato com você!");
-						vendedor.removerCarroDaLista(carro);
+						vendedor.removeCarroDaLista(carro);
 					}
 					
 					break;
