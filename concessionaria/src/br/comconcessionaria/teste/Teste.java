@@ -1,10 +1,14 @@
 package br.comconcessionaria.teste;
 
+
+
 import java.util.Scanner;
 
 import br.comconcessionaria.showroom.Carro;
 import br.concessionaria.comercial.Mecanico;
 import br.concessionaria.comercial.Vendedor;
+
+
 
 public class Teste {
 
@@ -12,12 +16,11 @@ public class Teste {
 
 		Scanner scan = new Scanner(System.in);
 
-		String venda = "Vendas";
 		String financeiro = "Financeiro";
 		String sac = "SAC";
-		
+
 		Vendedor vendedor = new Vendedor();
-		Carro carro;
+		Carro carro = null;
 		Mecanico mecanico;
 
 		boolean key = true;
@@ -29,8 +32,7 @@ public class Teste {
 			System.out.println("1 - VENDAS\n2 - FINANCEIRO\n3 - SAC");
 
 			int opcao = 0;
-			
-		
+
 			try {
 
 				opcao = Integer.parseInt(scan.next());
@@ -39,35 +41,37 @@ public class Teste {
 					System.out.println("Selecione apenas umas das opções abaixo:");
 					System.out.println("1 - Comprar\n2 - Vender\n3 - Representante");
 					opcao = Integer.parseInt(scan.next());
-					
+
 					switch (opcao) {
 					case 1:
 						System.out.println("Opção escolhida COMPRAR");
 						vendedor.setCargo("Gerente");
 						vendedor.setId(12345);
 						vendedor.setNome("Jonas");
-						vendedor.getLista(vendedor);
-						
+//						vendedor.getLista(vendedor);
+
 						System.out.println("Selecione um de nossos carros:");
-						
-						opcao = vendedor.getCarroByName(scan.next());
-						
-						carro = vendedor.getCarroById(opcao);
-						
-						System.out.println("Esse é o veículo que você escolheu? " );
+
+//						opcao = vendedor.getCarroByName(scan.next());
+//
+//						carro = vendedor.getCarroById(opcao);
+
+						System.out.println("Esse é o veículo que você escolheu? ");
 						carro.imprimir();
-						
-						System.out.println("Digite Sim para comprar:\nDigite Cancelar para desistir:");
-						
-						if(scan.next().equals("Sim")) {
-							vendedor.removerCarroDaLista(carro);
+
+						System.out.println("Digite SIM para comprar:\nDigite CANCELAR para desistir.");
+
+						if (scan.next().equals("SIM")) {
+//							vendedor.removerCarroDaLista(carro);
 						}
+
 						break;
 					case 2:
+
 						System.out.println("Opção escolhida VENDER");
 						System.out.println("\nBem Vindo ao sistema de Cadastro Nós Te Queremos:");
 						System.out.println("\nInsira abaixo as informações do seu veículo conforme solicitado:");
-						
+
 						carro = new Carro();
 
 						System.out.println("\nDigite o ano do veículo:");
@@ -80,27 +84,27 @@ public class Teste {
 						carro.setNome(scan.next());
 						System.out.println("\nDigite o valor desejado pelo veículo:");
 						carro.setPreco(Double.parseDouble(scan.next()));
-						
+
 						System.out.println("\nAs informações estão corretas:\nPodemos proseeguir?");
 						carro.imprimirVenda();
-						
+
 						System.out.println("\nutilize uma das opçôes abaixo:\n SIM \n CANCELAR");
 						
-						String respvenda=scan.next();
+						String respVenda = scan.next();
 						
-						if(respvenda.equals("SIM")){
-							vendedor.insertCarro(carro);
+						respVenda = respVenda.toUpperCase();
+						
+						if (respVenda.equals("SIM")) {
+//							vendedor.insertCarro(carro);
 							System.out.println("\nVeículo inserido com sucesso!");
-						}else if (respvenda.equals("CANCELAR")){
+						} else if (respVenda.equals("CANCELAR")) {
 							System.out.println("\nA SOLICITAÇÃO FOI ENCERRADA. VOCÊ SERÀ REDIRECIONADO "
 									+ "PARA O MENU PRINCIPAL AGORA!\n\n\n\n\n");
-						}else {
+						} else {
 							System.out.println("\nUtilize somente as opções disponíveis:");
 							continue comando;
-		             
 						}
-						
-						key = false;
+
 						break;
 					case 3:
 						System.out.println("Opção escolhida REPRESENTANTE");
@@ -126,12 +130,12 @@ public class Teste {
 				continue comando;
 			}
 
-		}//final while
+		} // final while
 
 		scan.close();
-	}//Final da main
+	}// Final da main
 
-}//Final da class
+}// Final da class
                     
 
 
