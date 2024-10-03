@@ -1,0 +1,32 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+
+.container{
+	background-color: #008B8B;
+	width: 70%;
+	margin: 0 auto;
+	
+}
+
+.cabecalho{
+	background-color: #008080;
+	color: #fff;
+	display:flex;
+	flex-direction: row;
+	padding:5% 0;
+	justify-content: space-between;
+}
+
+.menu a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.rodape h2{
+	
+	color: #fff;
+}
