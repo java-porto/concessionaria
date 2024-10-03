@@ -7,28 +7,48 @@
   <head>
 	<meta charset="UTF-8">
 	<title>Olá Mundo</title>
+	<link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
-	<h1>Página Inicial</h1>
-	
-		<%
-			Carro carro = new Carro();
-			carro.setId(1);
-			carro.setNome("Corsa");
-			carro.setCor("Preto");
-			carro.setModelo("Hatch");
-			carro.setAno(2006);
-			carro.setPreco(13.000);
-		%>
-		<div>
-			<h2>Nosso veículo</h2>
-			<p>Nome do veículo   :    <%=carro.getNome() %></p>
-			<p>Cor do veículo    :    <%=carro.getCor() %></p>
-			<p>Ano do veículo    :    <%=carro.getAno() %></p>
-			<p>Modelo do veículo :    <%=carro.getModelo() %></p>
-			<p>Valor do veículo  :    <%=carro.getPreco() %></p>										
+		<div class="container">
+			<header class="cabecalho">
+				<h1>Concessionaria - PortoCar</h1>
+				<nav class="menu">
+					<ul>
+						<li><a href="#">Comprar</a></li>
+						<li><a href="#">Vender</a></li>
+						<li><a href="#">Representante</a></li>
+					</ul>
+				</nav>
+			</header>	
+			
+			<main class="principal">
+				<section>
+					<div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+						   Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						
+						</p>
+					</div>
+					<div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+						   Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						
+						</p>
+					</div>
+				</section>
+			</main>
+			<footer class="rodape">
+				<h2>Show Room</h2>
+				<p>Av. dos Amigos sem Emprego 2180 - SemBloco</p>
+				<p>Criado por <span>Rei Luizinho</span> &copy; 2024</p>
+			</footer>							
 		</div>
-	
+		
   </body>
 </html>
 
