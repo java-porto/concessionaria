@@ -17,11 +17,43 @@
 			<nav class="menu">
 				<ul>
 					<li><a href="#">Comprar</a></li>
+					<li><a href="loja?nome=Jonas&idade=24">Loja</a></li>
 					<li><a href="#">Vender</a></li>
 					<li><a href="#">Representante</a></li>
 				</ul>
 			</nav>
 		</header>
+		
+		<h2>recuperando atributos</h2>
+		
+		<%
+			String nome = "";
+			int idade = 0;
+			//recebendo os parametros da Servlet
+			if(request.getAttribute("nm") != null || request.getAttribute("id") != null) {
+				nome = (String)request.getAttribute("nm");
+				idade = (Integer)request.getAttribute("id");
+			}
+		%>
+		
+		<p>Nome: <%=nome%></p>
+		<p>Idade: <%=idade%></p>
+		
+		<div>
+			<form action="/loja" method="post">
+					<fieldset>
+						<legend>Cadastro de Carros</legend>
+						<div>
+							<label id="idCarro">Nome do Carro</label>
+							<input type="text"
+							name="nmCarro"
+							id="idCarro"
+							placeholder="Digite o nome do carro"
+							required />
+						</div>
+					</fieldset>
+			</form>
+		</div>
 
 		<main class="principal">
 			<section>
@@ -53,7 +85,7 @@
 		</main>
 		<footer class="rodape">
 			<h2>Show Room</h2>
-			<p>Avenida dos Ammigos Vagabudos, 666 - Sem bloco</p>
+			<p>Avenida dos Amigos Vagabudos, 666 - Sem bloco</p>
 			<p>Criado por <span>Rei Luizinho</span> &copy; 2024</p>
 		</footer>
 	</div>
