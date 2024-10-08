@@ -3,7 +3,7 @@
 
 <!DOCTYPE html> 
 <!-- Instrução DTD (Document Type Definition -->
-<html>
+<html lang="pt-br">
 	<head>
 		<meta charset="UTF-8">
 		<title>Olá Mundo</title>
@@ -18,9 +18,46 @@
 						<li><a href="#">Comprar</a></li>
 						<li><a href="#">Vender</a></li>
 						<li><a href="#">Representante</a></li>
+						<li><a href="loja?nome=Jonas&idade=24">Loja</a></li>
 					</ul>
 				</nav>
 			</header>
+			
+			<div>
+				<h2>Recuperando atributos</h2>
+				
+				<%
+					String nome = "";
+					int idade = 0;
+					//Recebendo os parâmetros da Servlet
+					if(request.getAttribute("nm") != null || request.getAttribute("id") != null){
+					nome = (String)request.getAttribute("nm");
+					idade = (Integer)request.getAttribute("id");
+					}
+				%>
+				
+				<p>Nome: <%=nome%></p>
+				<p>Idade: <%=idade%></p>
+			</div>
+			
+			
+			<div>
+				<form action="/loja" method="post">
+					<fieldset>
+						<legend>Cadastro de Carros</legend>
+						<div>
+							<label for="idCarro">Nome do Carro</label>
+							<input type="text"
+							name="nmCarro"
+							id="idCarro"
+							placeholder="Digite o nome do carro:"
+							required />
+						</div>
+					</fieldset>
+				</form>
+			
+			</div>
+			
 			
 			<main class="principal">
 				<section>
