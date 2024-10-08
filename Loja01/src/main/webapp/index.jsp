@@ -17,10 +17,49 @@
 					<li><a href="#">Comprar</a></li>
 					<li><a href="#">Vender</a></li>
 					<li><a href="#">Representante</a></li>
+					<li><a href="loja?nome=João&idade=18">Loja</a></li>
 				</ul>
 			</nav>
 		</header>
 
+        <div>
+            <h2>Recuperando atributos</h2>
+        
+           <%
+            String nome = "" ;
+           int idade = 0;
+           //recebendo os parâmetros da Servlet
+               if (request.getAttribute("nm") != null || request.getAttribute("id") != null) {               
+                  nome  = (String)request.getAttribute("nm");
+                  idade = (Integer)request.getAttribute("id");
+               }
+           %>
+        
+            <p>NOME: <%=nome%></p>
+            <p>IDADE: <%=idade%></p>
+        </div>
+        
+        
+        
+           <div>
+               <form action="/Loja" method="post">                   
+               <fieldset>
+                     <legend>Cadastro de Carros</legend>
+                     <div>
+                        <label>Nome do Carro</label>
+                        <input type= "text"
+                        name="nmCarro"
+                        id="idCarro"
+                        placeholder="Digite o nome do Carro:"
+                        required />
+                     </div>
+               </fieldset>
+               
+               </form>                   
+           </div>
+        
+        
+        
 		<main class="Principal">
 			<section>
 				<div>
