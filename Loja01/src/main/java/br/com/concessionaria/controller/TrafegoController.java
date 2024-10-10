@@ -31,7 +31,7 @@ public class TrafegoController extends HttpServlet {
 		
 		System.out.println("O nome do cliente é: " + nomeParam + ", dono do veículo: " + carroParam);
 		
-		request.setAttribute("nc",nomeParam);
+		request.setAttribute("nc", nomeParam);
 		request.setAttribute("car", carroParam);
 		
 		request.getRequestDispatcher("resultado.jsp").forward(request, response);
@@ -42,7 +42,20 @@ public class TrafegoController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+//		String modelo = request.getParameter("modelo");
+		
 		Carro carro = new Carro();
+		
+		carro.setNome(request.getParameter("nome"));
+		carro.setModelo(request.getParameter("modelo"));
+		carro.setCor(request.getParameter("cor"));
+		carro.setAno(Integer.parseInt(request.getParameter("ano")));
+		carro.setPreco(Double.parseDouble(request.getParameter("preco")));
+		
+		request.setAttribute("car", carro);
+		
+		request.getRequestDispatcher("resultado.jsp").forward(request, response);
+		
 	}
 
 }
