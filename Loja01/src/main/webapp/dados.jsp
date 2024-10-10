@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<div>
-			<form action="/dados" method="post">
+			<form action="dados" method="post">
             <fieldset>
                 <legend>Cadastro de veículos</legend>
                 <div>
@@ -19,8 +19,9 @@
                 </div>
                 <div>
                     <label for="idAno">Ano do veículo</label>
-                    <input type="date"
+                    <input type="number"
                     name="ano" id="idAno"
+                    pattern="[0-9]{4}"
                     required>
                 </div>
                 <div>
