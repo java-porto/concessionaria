@@ -8,7 +8,7 @@
 </head>
 <body>
 <div>
-        <form action="/dados" method="post"></form>
+        <form action="dados" method="post">
         <fieldset>
             <legend>Cadastro de veículos</legend>
             <div>
@@ -40,6 +40,7 @@
                     <button type="submit">Cadastrar</button>
                 </div>
         </fieldset>
+        </form>
        </div>
 </body>
 </html>
