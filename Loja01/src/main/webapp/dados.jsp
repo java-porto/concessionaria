@@ -9,7 +9,7 @@
 <body>
 	
     <div>
-        <form action="/dados" method="post">
+        <form action="dados" method="post">
             <fieldset>
                 <legend>Cadastro de Veículos</legend>
                 <div>

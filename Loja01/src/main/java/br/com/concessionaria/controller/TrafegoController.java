@@ -50,9 +50,19 @@ public class TrafegoController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+//	String modelo = request.getParameter("modelo");	
+		
 		Carro carro = new Carro();
 		
+		carro.setModelo(request.getParameter("modelo"));
+		carro.setNome(request.getParameter("nome"));
+		carro.setCor(request.getParameter("cor"));
+		carro.setAno(Integer.parseInt(request.getParameter("ano")));
+		carro.setPreco(Double.parseDouble(request.getParameter("preco")));
 		
+		request.setAttribute("objCarro", carro);
+		
+		request.getRequestDispatcher("resultado.jsp").forward(request, response);
 		
 	}
 

@@ -1,3 +1,4 @@
+<%@page import="br.com.concessionaria.model.Carro"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,35 +12,22 @@
 				<div>
 				<form action="/dados" method="post">
 					<fieldset>
-						<legend>Cadastro de carros</legend>
+					
 				</div>
 				
 				<%
-				String nome = "Civic";
-				int ano = 2000;
-					//Recebendo os parâmetros da Servlet
-					
-					if(request.getAttribute("name") != null || request.getAttribute("year") != null){
-						nome = (String)request.getAttribute("name");
-						ano = (Integer)request.getAttribute("year");
-					}
+					Carro carro = (Carro)request.getAttribute("objCarro");
 				%>
-				
 				<div>
-							<label>Nome do carro</label>
-							<input type="text"
-							  name="nmCarro"
-							  id="idCarro"
-							  placeholder="Digite o nome do carro"
-							  required />
-				</div>
-				
-				<p>NOME: <%=nome%></p>
-				<p>ANO: <%=ano%></p>
+				<p>MODELO DO VEÍCULO   : <span><%=carro.getModelo()%></span></p>
+				<p>NOME DO VEÍCULO     : <span><%=carro.getNome()%></span></p>
+				<p>COR DO VEÍCULO      : <span style="background-color:<%=carro.getCor()%>;color:#fff"><%=carro.getCor()%></span></p>
+				<p>ANO DO VEÍCULO      : <span><%=carro.getAno()%></span></p>
+				<p>VALOR DO VEÍCULO R$ : <span><%=carro.getPreco()%></span></p>
 				</div>
 					</fieldset>
 				</form>
-			</div>
+			
 	<p><a href="dados.jsp">HOME</a></p>
 </body>
 </html>
