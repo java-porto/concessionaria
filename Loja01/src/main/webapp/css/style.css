@@ -27,3 +27,9 @@
 	color: white;	
 }
 
+.Erro {
+	background-color: #f2261c;
+	color: #f95969;
+	border: 2px solid #ff2222;
+	font-size: 2reim;
+}

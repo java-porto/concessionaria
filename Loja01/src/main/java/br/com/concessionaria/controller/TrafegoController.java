@@ -1,12 +1,14 @@
 package br.com.concessionaria.controller;
 
+import java.io.IOException;
+import java.util.List;
+
+import br.com.concessionaria.bo.CarroBO;
+import br.com.concessionaria.model.Carro;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-
-import br.com.concessionaria.model.Carro;
 
 /**
  * Servlet implementation class TrafegoController
@@ -24,17 +26,13 @@ public class TrafegoController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		CarroBO cbo = new CarroBO();
+		List<Carro> lista = cbo.listaCarro();
 		
+		request.setAttribute("listaCarros", lista);
 		
-		String nomeParam = request.getParameter("nomeCliente");
-		String carroParam = request.getParameter("carro");
+		request.getRequestDispatcher("listagem.jsp").forward(request, response);
 		
-		System.out.println("O nome do cliente é: " + nomeParam + ", dono do veículo: " + carroParam);
-		
-		request.setAttribute("nc", nomeParam);
-		request.setAttribute("car", carroParam);
-		
-		request.getRequestDispatcher("resultado.jsp").forward(request, response);
 	}
 
 	/**
@@ -44,18 +42,32 @@ public class TrafegoController extends HttpServlet {
 		// TODO Auto-generated method stub
 //		String modelo = request.getParameter("modelo");
 		
-		Carro carro = new Carro();
+//		Carro carro = new Carro();
+//		
+//		carro.setNome(request.getParameter("nome"));
+//		carro.setModelo(request.getParameter("modelo"));
+//		carro.setCor(request.getParameter("cor"));
+//		carro.setAno(Integer.parseInt(request.getParameter("ano")));
+//		carro.setPreco(Double.parseDouble(request.getParameter("preco")));
+//		
+//		request.setAttribute("car", carro);
+//		
+//		request.getRequestDispatcher("resultado.jsp").forward(request, response);
+//		
+		CarroBO cbo = new CarroBO();
 		
-		carro.setNome(request.getParameter("nome"));
-		carro.setModelo(request.getParameter("modelo"));
-		carro.setCor(request.getParameter("cor"));
-		carro.setAno(Integer.parseInt(request.getParameter("ano")));
-		carro.setPreco(Double.parseDouble(request.getParameter("preco")));
-		
-		request.setAttribute("car", carro);
-		
-		request.getRequestDispatcher("resultado.jsp").forward(request, response);
-		
+		if(cbo.validacao(request.getParameter("modelo"),
+				request.getParameter("nome"),
+				request.getParameter("cor"),
+				Integer.parseInt(request.getParameter("ano")),
+				Double.parseDouble(request.getParameter("preco")))) {
+			response.sendRedirect("sucesso.jsp");
+		} else {
+			
+			request.setAttribute("msg", "Erro");
+			
+			request.getRequestDispatcher("dados.jsp").forward(request, response);
+		}
 	}
 
 }
