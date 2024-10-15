@@ -23,4 +23,10 @@
 	text-decoration: none;
 	color: #fff;
 }
+.Erro{
+	background-color: #cd211d;
+	color: #ff0000;
+	border: 2px solid #ff8080;
+	font: 2rem;
+}
 

@@ -5,8 +5,29 @@
 <head>
 <meta charset="UTF-8">
 <title>dados</title>
+
+	<link rel="stylesheet" href="./css/style.css">
+
 </head>
 <body>
+	
+	<div>
+		<a href="dados">LISTAGEM</a>
+	</div>
+	
+	<div>
+		<%
+			String msg = "";
+		  if(request.getAttribute("msg")!= null){
+			  msg = (String)request.getAttribute("msg");
+		  }
+		%>
+	</div>
+	
+	
+	<div class="<%=msg%>">
+		<p><%=msg%></p>
+	</div>
 	
     <div>
         <form action="dados" method="post">

@@ -24,4 +24,8 @@
     <servlet-name>TrafegoController</servlet-name>
     <url-pattern>/dados</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TrafegoController</servlet-name>
+    <url-pattern>/trafego</url-pattern>
+  </servlet-mapping>
 </web-app>
