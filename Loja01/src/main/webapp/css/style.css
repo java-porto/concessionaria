@@ -26,6 +26,13 @@
 	color: #fff;
 }
 
+.Erro {
+	background-color: #fc2203;
+	color: #ff0000;
+	border:2px solid #ff0404;
+	font-size: 2rem;
+}
+
 .rodape h2{
 	
 	color: #fff;

@@ -5,9 +5,41 @@
 <head>
 <meta charset="UTF-8">
 <title>Dados de entrada</title>
+
+	<link rel="stylesheet" href="./css/style.css">
+
 </head>
 <body>
-<div>
+
+		<div>
+		
+		 	<a href="trafego">LISTAGEM</a>
+	
+		</div>
+
+
+
+
+
+
+
+
+
+		<div>
+		<%
+		  String msg = "";	
+		  if (request.getAttribute("msg") != null){
+		  	msg = (String)request.getAttribute("msg");
+		  }
+		%>
+		</div>
+		<p><%=msg%></p>
+		
+	    <div class="<%=msg%>">
+	    		
+	    </div>
+		
+        <div>
         <form action="dados" method="post">
         <fieldset>
             <legend>Cadastro de veículos</legend>
