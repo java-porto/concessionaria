@@ -4,17 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Dados de entrada</title>
-
+<title>sucesso</title>
 </head>
 <body>
-
-
 <div>
-
-<a  href="dados?dollar=5.58&bolsa=2.55">Dados</a>
+	<p><a href="dados.jsp">dados</a>
 </div>
-  
 
 </body>
 </html>

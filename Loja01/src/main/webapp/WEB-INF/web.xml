@@ -20,6 +20,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>TrafegoController</servlet-name>
-    <url-pattern>/dados</url-pattern>
+    <url-pattern>/trafego</url-pattern>
   </servlet-mapping>
 </web-app>
