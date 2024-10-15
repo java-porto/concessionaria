@@ -6,22 +6,21 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import br.com.concessionaria.bo.CarroBO;
 import br.com.concessionaria.model.Carro;
 
 /**
- * Servlet implementation class LojaController
+ * Servlet implementation class TrafegoController
  */
-public class LojaController extends HttpServlet {
+public class TrafegoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LojaController() {
+    public TrafegoController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,38 +30,46 @@ public class LojaController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-//		String nomeParam = request.getParameter("nome");
-//		int idadeParam = Integer.parseInt(request.getParameter("idade"));
-//		
-//		System.out.println("O nome do usuário é:" + nomeParam + " e tem " + idadeParam + " anos.");
-//		
-		//Colocando os dados dentro de atributos e reenviando eles para página INDEX.
-//		request.setAttribute("nm", nomeParam);
-//		request.setAttribute("id", idadeParam);
-		
-//		//Realizando o envio de fato do getRequestDispatcher
-//		request.getRequestDispatcher("index.jsp").forward(request, response);
-//		
-		//		PrintWriter pw = response.getWriter();
-		//		response.setContentType("text/html");
-		//		pw.print("<h1>Olá Mundo!<h1>");
-		//		pw.print("<a href ='index.jsp'>INDEX</a>");
-		//		pw.close();
-		
 		CarroBO cbo = new CarroBO();
 		List<Carro> lista = cbo.listaCarro();
 		
 		request.setAttribute("listaCarros", lista);
 		
 		request.getRequestDispatcher("listagem.jsp").forward(request, response);
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		//String modelo = request.getParameter("modelo");
+		
+		//Carro carro = new Carro();
+		//carro.setNome(request.getParameter("nome"));
+		//carro.setAno(Integer.parseInt(request.getParameter("ano")));
+		//carro.setModelo(request.getParameter("modelo"));
+		//carro.setCor(request.getParameter("cor"));
+		//carro.setPreco(Double.parseDouble(request.getParameter("preco")));
+		
+		CarroBO cbo = new CarroBO();
+		
+		if(cbo.validacao(request.getParameter("modelo"), 
+				request.getParameter("nome"),
+				request.getParameter("cor"), 
+				Integer.parseInt(request.getParameter("ano")),
+				Double.parseDouble(request.getParameter("preco")))) {
+			response.sendRedirect("sucesso.jsp");
+		} else {
+		    
+		    request.setAttribute("msg", "Erro!");
+		    request.getRequestDispatcher("dados.jsp").forward(request, response);
+		}
+		
+	//request.setAttribute("objcarro", carro);
+		
+	//request.getRequestDispatcher("resultado.jsp").forward(request, response);
 	}
 
 }

@@ -27,3 +27,10 @@
 	color: #fff;
 }
 
+.Erro{
+	background-color: #f3544b;
+	color: #ff1111;
+	border: 2px solid #ff2020;
+	font-size: 2rem;
+}
+
