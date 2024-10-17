@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,19 +17,12 @@
 		<a href="trafego">LISTAGEM</a>
 	</div>
 	
+	<div class="${(msg != null ? msg : '' )}">
+		<p>${(msg != null ? msg : "" )}</p>
+	</div>
 	<div>
-		<%
-		String msg = "";	
-		if(request.getAttribute("msg")!= null) {
-				msg = (String)request.getAttribute("msg");
-			}
-		%>
+		${al != null ? al : ""}
 	</div>
-	
-	<div class="<%=msg%>">
-		<p><%=msg%></p>
-	</div>
-	
 	<div>
 		<form action="trafego" method="post">
 			<fieldset>

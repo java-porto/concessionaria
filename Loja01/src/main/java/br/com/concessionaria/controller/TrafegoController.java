@@ -64,8 +64,19 @@ public class TrafegoController extends HttpServlet {
 			response.sendRedirect("sucesso.jsp");
 		} else {
 			
-			request.setAttribute("msg", "Erro");
+			String funcJs = "<script>\r\n"
+					+ "        function msgErro() {\r\n"
+					+ "            const elementoMsg = document.querySelector(\".Erro\")\r\n"
+					+ "            setTimeout(() => {\r\n"
+					+ "                elementoMsg.style.display = \"none\";\r\n"
+					+ "            }, 5000);\r\n"
+					+ "        }\r\n"
+					+ "\r\n"
+					+ "        msgErro();\r\n"
+					+ "    </script>";
 			
+			request.setAttribute("msg", "Erro");
+			request.setAttribute("al", funcJs);
 			request.getRequestDispatcher("dados.jsp").forward(request, response);
 		}
 	}
