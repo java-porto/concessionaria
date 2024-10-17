@@ -68,7 +68,7 @@ public class TrafegoController extends HttpServlet {
 					+ "        const elMsg = document.querySelector(\".Erro\");\r\n"
 					+ "        setTimeout(() => {\r\n"
 					+ "            elMsg.style.display = \"none\";\r\n"
-					+ "        },10000);\r\n"
+					+ "        },3000);\r\n"
 					+ "    }\r\n"
 					+ "msgErro();\r\n"
 					+ "</script>";
