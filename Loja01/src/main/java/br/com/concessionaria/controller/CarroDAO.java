@@ -52,4 +52,14 @@ public class CarroDAO {
 		return banco;
 	}
 	
+	public Carro select(int id) {
+		for (int i = 0; i < banco.size(); i++) {
+			if(banco.get(i).getId() == id) {
+				return banco.get(i);
+			}
+		}
+		
+		return null;
+	}
+	
 }

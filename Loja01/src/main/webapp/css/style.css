@@ -29,5 +29,35 @@
 	background-color: #f3544b;
 	color: #ff1111;
 	border: 2px solid #ff2020;
-	font-size: 2rem;
+	font-size: 2rem;	
+}
+
+.tabelaCarros {
+	border-collapse: collapse;
+	border: 2px solid #000000;
+	margin: 0 auto;
+	width: 80%;
+	font-family: Arial, Verdana, Sans-Serif;
+}
+
+.tabelaCarros thead th {
+	border: 2px solid #000000;
+	padding: 10px;
+	text-align: center;
+}
+
+.tabelaCarros tbody td {
+	border: 2px solid #000000;
+	padding: 10px;
+	text-align: center;
+}
+
+.tabelaCarros tfoot td {
+	border: 2px solid #000000;
+	padding: 10px;
+	text-align: center;
+}
+
+.tabelaCarros tbody tr:hover {
+	background-color: #c1c1c1;
 }
