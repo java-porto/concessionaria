@@ -33,3 +33,36 @@
 	border: 2px solid #ff2222;
 	font-size: 2reim;
 }
+
+.table {
+	border-collapse: collapse;
+	border: 2px solid #000000;
+	margin: 0 auto;
+	width: 80%;
+	font-family: Arial, Verdana, sans-serif;
+}
+
+.thead th {
+	border: 2px solid #000000;
+	padding: 10px;
+	text-align: center;
+	
+}
+
+.tbody td {
+	border: 2px solid #000000;
+	padding: 10px;
+	text-align: center;
+	
+}
+
+.tfoot td {
+	border: 2px solid #000000;
+	padding: 10px;
+	text-align: center;
+	
+}
+
+.tbody tr:hover {
+	background-color: #c1c1c1;
+}
