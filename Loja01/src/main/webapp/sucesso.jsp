@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sucesso</title>
+<title>Sucesso!</title>
 </head>
 <body>
 	<h1>Sucesso!</h1>
 	<div>
-		<p><a href ="dados.jsp">DADOS</a></p>
+		<p><a href="dados.jsp">DADOS</a>
 	</div>
 </body>
 </html>

@@ -1,16 +1,10 @@
 package br.com.concessionaria.controller;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
-
-import br.com.concessionaria.bo.CarroBO;
-import br.com.concessionaria.model.Carro;
 
 /**
  * Servlet implementation class LojaController
@@ -31,30 +25,27 @@ public class LojaController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-//		String nomeParam = request.getParameter("nome");
-//		int idadeParam = Integer.parseInt(request.getParameter("idade"));
-//		
-//		System.out.println("O nome do usuário é:" + nomeParam + " e tem " + idadeParam + " anos.");
-//		
-		//Colocando os dados dentro de atributos e reenviando eles para página INDEX.
-//		request.setAttribute("nm", nomeParam);
-//		request.setAttribute("id", idadeParam);
+		//Exercicio
+		//Criar um link no PW que remeta a requisição para a pagina index.
 		
-//		//Realizando o envio de fato do getRequestDispatcher
-//		request.getRequestDispatcher("index.jsp").forward(request, response);
-//		
-		//		PrintWriter pw = response.getWriter();
-		//		response.setContentType("text/html");
-		//		pw.print("<h1>Olá Mundo!<h1>");
-		//		pw.print("<a href ='index.jsp'>INDEX</a>");
-		//		pw.close();
+		//Recepcionando os dados que chegam do index.jsp via queryString
+		String nomeParam = request.getParameter("nome");
+		int idadeParam = Integer.parseInt(request.getParameter("idade"));
 		
-		CarroBO cbo = new CarroBO();
-		List<Carro> lista = cbo.listaCarro();
+		System.out.println("O nome do usuário é :" + nomeParam + " com idade de :" + idadeParam + " anos");
 		
-		request.setAttribute("listaCarros", lista);
+		request.setAttribute("nm", nomeParam);
+		request.setAttribute("id", idadeParam);
 		
-		request.getRequestDispatcher("listagem.jsp").forward(request, response);
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+		
+//		PrintWriter pw = response.getWriter();
+//		response.setContentType("text/html");nm
+//		pw.print("<h1>Olá Mundo!</h1>");
+//		pw.print("<a href='index.jsp'>INDEX</a>");
+//		pw.close();
+		
+		
 	}
 
 	/**
