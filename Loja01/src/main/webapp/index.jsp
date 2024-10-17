@@ -83,8 +83,8 @@
 		
 		<footer class="rodape">
 			<h2>Showroom</h2>
-			<p>Av. dos Amigos sem Emprego 2180 - Sem Bloco</p>
-			<p>Criado por <span>Vinícius</span> &copy; 2024 </p>
+			<p>Av.Barao de Campinas 858 -  Bloco1</p>
+			<p>Criado por <span>Brinquinho</span> &copy; 2024 </p>
 		</footer>
 
 	</div>

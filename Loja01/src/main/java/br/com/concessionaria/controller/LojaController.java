@@ -1,12 +1,10 @@
-package br.concessionaria.controller;
+package br.com.concessionaria.controller;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 /**
  * Servlet implementation class LojaController
@@ -26,24 +24,28 @@ public class LojaController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Recpcionando os dados que chegam via queristrong da  pagina
+		
+		//Exercicio
+		//Criar um link no PW que remeta a requisição para a pagina index.
+		
+		//Recepcionando os dados que chegam do index.jsp via queryString
 		String nomeParam = request.getParameter("nome");
-		int idadeParam = Integer.parseInt( request.getParameter("idade"));
-		System.out.println("O nome do usuario é :" + nomeParam + "e tem" + idadeParam + "anos");
-		//Colcando os dados dentro de atributos e reenviando eles para a pagina index
+		int idadeParam = Integer.parseInt(request.getParameter("idade"));
+		
+		System.out.println("O nome do usuário é :" + nomeParam + " com idade de :" + idadeParam + " anos");
+		
 		request.setAttribute("nm", nomeParam);
-		request.setAttribute("id",idadeParam);
+		request.setAttribute("id", idadeParam);
 		
-		request.getRequestDispatcher("index.jsp").forward(request,response);
-		
-		
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 //		PrintWriter pw = response.getWriter();
-//		response.setContentType("text/html");
-//		pw.print("<h1>Ola Mundo!</h1>");
-//		pw.print("<a href = 'index.jsp'>INDEX</a");
-//		//
+//		response.setContentType("text/html");nm
+//		pw.print("<h1>Olá Mundo!</h1>");
+//		pw.print("<a href='index.jsp'>INDEX</a>");
 //		pw.close();
+		
+		
 	}
 
 	/**
@@ -53,5 +55,4 @@ public class LojaController extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

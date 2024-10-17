@@ -1,38 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Dados de entrada</title>
-
-<link rel ="stylestheet" href="./css/style.css">
- 
-
+<link rel="stylesheet" href="./css/style.css">
+	
 </head>
 <body>
-  
-  <div>
-    <%
+	
+	<div>
+		<a href="trafego">LISTAGEM</a>
+	</div>
+	<div class="${(msg != null ? msg : '' )}">
+		<p>${(msg != null ? msg : "" )}</p>
+	</div>
+	
+	
+	<div>
+		<%
 		String msg = "";	
 		if(request.getAttribute("msg")!= null) {
 				msg = (String)request.getAttribute("msg");
 			}
 		%>
 	</div>
-	<p><%=msg%></p>
 	
-	<div class="Erro!"></div>
-
-
-<div>
-
-     <form action="trafego" method="post">
-       <fieldset>
-         <legend>Cadastro de Veiculos </legend>
-      
-      
-    <div>
+	<div class="<%=msg%>">
+		<p><%=msg%></p>
+	</div>
+	
+	<div>
+		<form action="trafego" method="post">
+			<fieldset>
+				<legend>Cadastro de Veículos</legend>
+                <div>
                     <label for="idModelo">Modelo</label>
                     <input type="text" name="modelo" id="idModelo" 
                     placeholder="Digite o modelo do veículo" required>
@@ -48,7 +53,16 @@
                 </div>
                 <div>
                     <label for="idAno">Ano</label>
-                    <input type="number" name="ano" id="idAno" required pattern="[0-9]{4}">
+                    <select name="ano" id="idAno" required>
+                  <option value="">Selecione o ano</option>
+                  <script>
+            	         const currentYear = new Date().getFullYear();
+            	         for (let year = currentYear; year >= 1900; year--) {
+                               document.write('<option value="' + year + '">' + year + '</option>');
+           	         }
+                  </script>
+    	</select>
+                    
                 </div>
                 <div>
                     <label for="idPreco">Preço</label>
@@ -62,4 +76,5 @@
 	</div>
 
 </body>
+
 </html>
