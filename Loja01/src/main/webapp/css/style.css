@@ -9,7 +9,7 @@
 	background-color: #008B8B;
 	width: 70%;
 	margin: 0 auto;
-	
+	font-family: Times new roman, Verdana, sans-serif;
 }
 
 .cabecalho{
@@ -19,11 +19,13 @@
 	flex-direction: row;
 	padding:5% 0;
 	justify-content: space-between;
+	font-family: Times new roman, Verdana, sans-serif;
 }
 
 .menu a {
 	text-decoration: none;
 	color: #fff;
+	font-family: Times new roman, Verdana, sans-serif;
 }
 
 .Erro {
@@ -31,7 +33,41 @@
 	color: #fff;
 	border:2px solid #eb141a;
 	font-size: 2rem;
+	font-family: Times new roman, Verdana, sans-serif;
 }
+
+table{
+	border-collapse: collapse;
+	border:2px solid #000000;
+	margin: 0 auto;
+	width: 80%;
+	font-family: Times new roman, Verdana, sans-serif;
+}
+
+thead th{
+	border: 2px solid #000000;
+	padding: 10px;
+	text-align: center;
+}
+
+tbody td{
+	border: 2px solid #000000;
+	padding: 10px;
+	text-align: center;
+}
+
+tfoot td{
+	border: 2px solid #000000;
+	padding: 10px;
+	text-align: center;
+}
+
+tbody tr:hover{
+	background-color:#c1c1c1;
+}
+
+
+
 
 .rodape h2{
 	
