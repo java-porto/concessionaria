@@ -19,23 +19,13 @@
 	
 	
 	
-	<div>
-	
-		<p>${msg}</p>
-	
-		<%
-		String msg = "";	
-		if(request.getAttribute("msg")!= null) {
-				msg = (String)request.getAttribute("msg");
-			}
-		%>
+	<div class="${(msg != null ? msg : '')}">
+		<p>${(msg != null ? msg : "")}</p>
 	</div>
-	<p><%=msg%></p>
 	
-	<div class="Erro!"></div>
-	<p><%=msg%></p>
+
 	<div>
-		<form action="trafego" method="post">
+		<form action="dados" method="post">
 			<fieldset>
 				<legend>Cadastro de Veículos</legend>
                 <div>
