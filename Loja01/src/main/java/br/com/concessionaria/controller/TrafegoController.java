@@ -57,9 +57,23 @@ public class TrafegoController extends HttpServlet {
 				Double.parseDouble(request.getParameter("preco")))) {
 					response.sendRedirect("sucesso.jsp");
 				}else {
+					
+					String funcJs = "<script> \r\n"
+							+ "\r\n"
+							+ "function msgErro(){\r\n"
+							+ "    const elMsg = document.querySelector(\".Erro\");\r\n"
+							+ "    setTimeout(() => {\r\n"
+							+ "        elMsg.style.display = \"none\";\r\n"
+							+ "    },10000);\r\n"
+							+ "}\r\n"
+							+ "\r\n"
+							+ "msgErro();\r\n"
+							+ "</script>";
+					
 					//crie um dispatcher para a página dados.jsp com um atributo de nome msg, 
 					//a mensagem deve alertar o usuário sobre o erro no preenchimento
 					request.setAttribute("msg", "Erro");
+					request.setAttribute("al", funcJs);
 					request.getRequestDispatcher("dados.jsp").forward(request, response);
 
 				}
