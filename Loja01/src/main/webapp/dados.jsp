@@ -26,7 +26,7 @@
 	<div>
 		<form action="trafego" method="post">
 			<fieldset>
-				<legend>Cadastro de Veiculos</legend>
+				<legend>Cadastro de Veículos</legend>
                 <div>
                     <label for="idModelo">Modelo</label>
                     <input type="text" name="modelo" id="idModelo" 

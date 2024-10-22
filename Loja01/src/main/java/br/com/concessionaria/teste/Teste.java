@@ -10,6 +10,8 @@ public class Teste {
 		
 		//CarroDAO cDAO = new CarroDAO();
 		//Carro carro = cDAO.select(3);
+
+
 		
 		//System.out.println("nome do carro: " + carro.getNome());
 		//System.out.println("Modelo do carro: " + carro.getModelo());
