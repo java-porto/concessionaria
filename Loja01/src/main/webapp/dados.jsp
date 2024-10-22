@@ -14,18 +14,17 @@
 <body>
 	
 	<div>
-		<a href="loja">LISTAGEM</a>
+		<a href="trafego">LISTAGEM</a>
 	</div>
 	
-	
-	
-	<div class="${(msg != null ? msg : '')}">
-		<p>${(msg != null ? msg : "")}</p>
+	<div class="${(msg != null ? msg : '' )}">
+		<p>${(msg != null ? msg : "" )}</p>
 	</div>
-	
-
 	<div>
-		<form action="dados" method="post">
+		${al != null ? al : ""}
+	</div>
+	<div>
+		<form action="trafego" method="post">
 			<fieldset>
 				<legend>Cadastro de Veículos</legend>
                 <div>
