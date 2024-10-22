@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -26,7 +27,7 @@
 	<div>
 		<form action="trafego" method="post">
 			<fieldset>
-				<legend>Cadastro de Veículos</legend>
+				<legend>Cadastro de Veiculos</legend>
                 <div>
                     <label for="idModelo">Modelo</label>
                     <input type="text" name="modelo" id="idModelo" 

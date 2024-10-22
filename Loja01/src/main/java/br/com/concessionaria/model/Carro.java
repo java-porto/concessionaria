@@ -1,23 +1,27 @@
+
 package br.com.concessionaria.model;
 
 public class Carro {
-	
+
 	private int id;
 	private String nome;
 	private String modelo;
-	private String cor;
 	private int ano;
+	private String cor;
 	private double preco;
 	
-	public Carro() {}
-
-	public Carro(int id, String nome, String modelo, String cor, int ano, double preco) {
+	
+	public Carro() {
+		
+	}
+	
+	public Carro(int id, String nome, String modelo, int ano, String cor, double preco) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.modelo = modelo;
-		this.cor = cor;
 		this.ano = ano;
+		this.cor = cor;
 		this.preco = preco;
 	}
 
@@ -45,20 +49,20 @@ public class Carro {
 		this.modelo = modelo;
 	}
 
-	public String getCor() {
-		return cor;
-	}
-
-	public void setCor(String cor) {
-		this.cor = cor;
-	}
-
 	public int getAno() {
 		return ano;
 	}
 
 	public void setAno(int ano) {
 		this.ano = ano;
+	}
+
+	public String getCor() {
+		return cor;
+	}
+
+	public void setCor(String cor) {
+		this.cor = cor;
 	}
 
 	public double getPreco() {
@@ -68,6 +72,5 @@ public class Carro {
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
-	
-	
+
 }

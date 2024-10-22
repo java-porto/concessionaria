@@ -1,3 +1,4 @@
+
 * {
 	margin: 0;
 	padding: 0;
@@ -5,64 +6,59 @@
 	font-size: 16px;
 }
 
-
 .container {
-	background-color: #000000;
+	background-color: red;
 	width: 70%;
-	margin: 0 auto;	
-	color: white;
+	margin: 0 auto;
 }
 
 .cabecalho {
-	background-color: #363636;	
-	color: white;
+	background-color: #8B008B;
+	color: #FFFFFF;
 	display: flex;
 	flex-direction: row;
-	padding: 5% 0;
+	padding: 2% 0;
 	justify-content: space-between;
 }
 
 .menu a {
 	text-decoration: none;
-	color: white;	
+	color: #FFFFFF;
 }
 
-.Erro {
-	background-color: #f2261c;
-	color: #f95969;
-	border: 2px solid #ff2222;
-	font-size: 2reim;
+.Erro{
+	background-color: #f3544b;
+	color: #ff1111;
+	border: 2px solid #ff2020;
+	font-size: 2rem;	
 }
 
-.table {
+.tabelaCarros {
 	border-collapse: collapse;
 	border: 2px solid #000000;
 	margin: 0 auto;
 	width: 80%;
-	font-family: Arial, Verdana, sans-serif;
+	font-family: Arial, Verdana, Sans-Serif;
 }
 
-.thead th {
+thead th {
 	border: 2px solid #000000;
 	padding: 10px;
 	text-align: center;
-	
 }
 
-.tbody td {
+.tabelaCarros tbody td {
 	border: 2px solid #000000;
 	padding: 10px;
 	text-align: center;
-	
 }
 
-.tfoot td {
+.tabelaCarros tfoot td {
 	border: 2px solid #000000;
 	padding: 10px;
 	text-align: center;
-	
 }
 
-.tbody tr:hover {
+.tabelaCarros tbody tr:hover {
 	background-color: #c1c1c1;
 }
