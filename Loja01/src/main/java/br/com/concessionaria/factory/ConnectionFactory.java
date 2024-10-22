@@ -4,8 +4,10 @@ import java.sql.Connection;
 
 public class ConnectionFactory {
 	
+	public static final Connection conexao = null;
+	public static final String URL = "jdbc:mysql://192.168.4228:3306/concessionaria";
+	
 	public ConnectionFactory() {
-		final Connection conexao = null;
-		private static final String URL = "jdbc:mysql://192.168.4228:3306/concessionaria";
+		
 	}
 }
