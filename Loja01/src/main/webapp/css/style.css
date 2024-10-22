@@ -40,7 +40,7 @@
 	font-family: Arial, Verdana, Sans-Serif;
 }
 
-.tabelaCarros thead th {
+thead th {
 	border: 2px solid #000000;
 	padding: 10px;
 	text-align: center;
