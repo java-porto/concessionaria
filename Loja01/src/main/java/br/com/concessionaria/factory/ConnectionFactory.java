@@ -10,6 +10,7 @@ public class ConnectionFactory {
 		public static final String URL = "jdbc:mysql://192.168.5.40:3306/concessionaria";
 		public static final String usuario = "root";
 		public static final String senha = "root";
+		 String getConexao = null;
 		
 		public Connection getConexao() {
 			try {
