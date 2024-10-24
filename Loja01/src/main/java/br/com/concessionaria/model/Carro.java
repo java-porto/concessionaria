@@ -8,13 +8,14 @@ public class Carro {
 	private int ano;
 	private String cor;
 	private double preco;
-	
+	private String marca;
 	
 	public Carro() {
 		
 	}
 	
-	public Carro(int id, String nome, String modelo, int ano, String cor, double preco) {
+	
+	public Carro(int id, String nome, String modelo, int ano, String cor, double preco, String marca) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -22,7 +23,10 @@ public class Carro {
 		this.ano = ano;
 		this.cor = cor;
 		this.preco = preco;
+		this.marca = marca;
 	}
+	
+	
 
 	public int getId() {
 		return id;
@@ -71,5 +75,15 @@ public class Carro {
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
+	
+	public String getMarca() {
+		return marca;
+	}
+
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
 
 }
