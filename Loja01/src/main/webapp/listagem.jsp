@@ -29,6 +29,8 @@
 		<th>Cor</th>
 		<th>Ano</th>
 		<th>Preço</th>
+		<th>Marca</th>
+		<th>EDITAR | EXCLUIR</th>
 	</tr>
 	
 	
@@ -43,13 +45,17 @@
 				<td>${ carro.cor}</td>
 				<td>${ carro.ano}</td>
 				<td>${ carro.preco}</td>
+				<td>${ carro.marca}</td>
+				<td> <a href= "editar/${carro.id}">Editar</a> |
+				 <a href= "excluir/${carro.id}">Excluir</a> </td>
+				
 			</tr>
 			
 	</c:forEach>
 	</tbody>
 	<tfoot>
 		<tr>
-			<td colspan= "6"> Qtd de registros:</td>
+			<td colspan= "8"> Qtd de registros:</td>
 		
 		 </tr>
 	  </tfoot>
