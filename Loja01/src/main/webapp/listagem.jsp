@@ -17,28 +17,32 @@
 		<thead>
 			<tr>
 				<th>id</th>
-				<th>Modelo</th>
+				<th>Marca</th>
 				<th>Nome</th>
+				<th>Modelo</th>
 				<th>Cor</th>
 				<th>Ano</th>
 				<th>Preco</th>
+				<th>EDITAR | EXCLUIR</th>
 			<tr>
 		</thead>
 		<tbody>
 		<c:forEach items="${listaCarros}" var="carro" varStatus="id">
 			<tr>
 				<td>${id.count}</td>
+				<td>${carro.marca}</td>
 				<td>${carro.modelo}</td>
 				<td>${carro.nome}</td>
 				<td>${carro.cor}</td>
 				<td>${carro.ano}</td>
 				<td>${carro.preco}</td>
+				<td><a href="editar/${carro.id}">EDITAR</a> | <a href="excluir/${carro.id}">EXCLUIR</a></td>
 			</tr>
 		</c:forEach>
 		</tbody>
 		<tfoot>
 			<tr>
-				<td colspan="6">Quantidade de registros:</td>
+				<td colspan="8">Quantidade de registros:</td>
 			</tr>
 		</tfoot>
 	</table>
