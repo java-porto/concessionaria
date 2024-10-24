@@ -1,4 +1,3 @@
-
 package br.com.concessionaria.factory;
 
 import java.sql.Connection;
@@ -8,26 +7,28 @@ import java.sql.SQLException;
 public class ConnectionFactory {
 	
 	public static Connection conexao = null;
-	public static final String URL = "jdbc:mysql://192.168.5.40:3306/concessionaria";
+	public static final String URL = "jdbc:mysql://192.168.5.168:3306/concessionaria";
 	public static final String USUARIO = "root";
 	public static final String SENHA = "root";
 	
 	public Connection getConexao() {
 		try {
-			//Carregar o drive do JDBC do MYSQL
+			//Carregando o drive do JDBC no MySQL
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			//Estabelecer a conexão com o BANCO DE DADOS
-			conexao = DriverManager.getConnection(URL,USUARIO,SENHA);
+			//Estabelecendo a conexão com o BANCO DE DADOS
+			conexao = DriverManager.getConnection(URL, USUARIO, SENHA); 
 			System.out.println("CONEXÃO ESTABELECIDA COM SUCESSO!");
 			
-		}catch(ClassNotFoundException e) {
-			System.out.println("Drive JDBC não encontrado!");
+		} catch (ClassNotFoundException e) {
+			System.out.println("DRIVE JDBC não encontrado!");
 			e.printStackTrace();
-		}catch (SQLException e) {
+		} catch (SQLException e) {
 			System.out.println("Erro ao conectar com o Banco!");
 			e.printStackTrace();
 		}
+		
 		return conexao;
 	}
+	
 }

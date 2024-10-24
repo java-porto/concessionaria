@@ -4,12 +4,17 @@ package br.com.concessionaria.bo;
 import java.util.List;
 
 import br.com.concessionaria.dao.CarroDAO;
+import br.com.concessionaria.factory.ConnectionFactory;
 import br.com.concessionaria.model.Carro;
 
 public class CarroBO {
 	
+	private CarroDAO cdao;
+	private ConnectionFactory cf;
+	
 	public List<Carro> listaCarro(){
-		CarroDAO cdao = new CarroDAO();
+		cf = new ConnectionFactory();
+		cdao = new CarroDAO(cf.getConexao());
 		return cdao.select();
 	}
 	
