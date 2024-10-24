@@ -31,12 +31,16 @@ public class TrafegoController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		CarroBO cbo = new CarroBO();
-		List<Carro> lista = cbo.listaCarro();
+		String uri[] = request.getRequestURI().split("/");
 		
-		request.setAttribute("listaCarro", lista);
+		System.out.println(uri[uri.length-1]);
 		
-		request.getRequestDispatcher("listagem.jsp").forward(request, response);
+		if(uri.equals("trafego")) {
+			CarroBO cbo = new CarroBO();
+			List<Carro> lista = cbo.listaCarro();
+			request.setAttribute("listaCarro", lista);
+			request.getRequestDispatcher("listagem.jsp").forward(request, response);
+		}
 	}
 
 	/**

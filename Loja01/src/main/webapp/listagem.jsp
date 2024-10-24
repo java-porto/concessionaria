@@ -14,7 +14,7 @@
 <body>
 	<h1>Lista de Veículos</h1>
 	<p><a href="dados.jsp">INICIO</a></p>
-	<table class="tabelaCarros">
+	<table class="tabelaCarro">
 		<thead>
 			<tr>
 				<th>id</th>
@@ -23,10 +23,12 @@
 				<th>Cor</th>
 				<th>Ano</th>
 				<th>Preco</th>
+				<th>Marca</th>
+				<th>Editar | Excluir</th>
 			<tr>
 		</thead>
 		<tbody>
-		<c:forEach items="${listaCarros}" var="carro" varStatus="id">
+		<c:forEach items="${listaCarro}" var="carro" varStatus="id">
 			<tr>
 				<td>${id.count}</td>
 				<td>${carro.modelo}</td>
@@ -34,12 +36,15 @@
 				<td>${carro.cor}</td>
 				<td>${carro.ano}</td>
 				<td>${carro.preco}</td>
+				<td>${carro.marca}</td>
+				<td><a href="editar/${carro.id}">Editar</a>
+				<a href="excluir/${carro.marca}">Excluir</a></td>
 			</tr>
 		</c:forEach>
 		</tbody>
 		<tfoot>
 			<tr>
-				<td colspan="6">Quantidade de registros:</td>
+				<td colspan="7">Quantidade de registros:</td>
 			</tr>
 		</tfoot>
 	</table>
