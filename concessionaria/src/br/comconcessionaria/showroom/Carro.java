@@ -1,5 +1,4 @@
 package br.comconcessionaria.showroom;
-
 import br.concessionaria.comercial.Mecanico;
 import br.concessionaria.comercial.Vendedor;
 

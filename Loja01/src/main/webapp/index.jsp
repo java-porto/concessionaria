@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-
+	
 	<div class="container">
 		<header class="cabecalho">
 			<h1>Concessionária - PortoCar</h1>
@@ -19,7 +19,7 @@
 					<li><a href="#">Comprar</a></li>
 					<li><a href="#">Vender</a></li>
 					<li><a href="#">Representante</a></li>
-					<li><a href="loja?nome=Jossi&idade=64">LOJA CONTROLLER</a></li>
+					<li><a href="loja?nome=Vinicius&idade=24">LOJA CONTROLLER</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -42,15 +42,21 @@
 			
 		</div>
 		
-		  <div>
-	     	 <form action = "/Loja" method = "post">
-	     	    <fieldset>
-	     	    <legend>Cadastro de Carro</legend>
-	     	    <div>
-	     	       <label> for = "idCarro">Nome do Carro</label>
-	     	 
-	     	 
-	     	 
+		<div>
+			<form action="/loja" method="post">
+				<fieldset>
+					<legend>Cadastro de Carros</legend>
+					<div>
+						<label for="idCarro">Nome do Carro</label>
+						<input type="text" 
+						name="nmCarro"
+						id="idCarro"
+						placeholder="Digite o nome do carro:"
+						required />
+					</div>
+				</fieldset>
+			</form>
+		</div>
 
 		<main class="principal">
 			<section>
@@ -83,8 +89,8 @@
 		
 		<footer class="rodape">
 			<h2>Showroom</h2>
-			<p>Av.Barao de Campinas 858 -  Bloco1</p>
-			<p>Criado por <span>Brinquinho</span> &copy; 2024 </p>
+			<p>Av. dos Amigos sem Emprego 2180 - Sem Bloco</p>
+			<p>Criado por <span>Vinícius</span> &copy; 2024 </p>
 		</footer>
 
 	</div>

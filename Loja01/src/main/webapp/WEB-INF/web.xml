@@ -5,8 +5,10 @@
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
+    <description></description>
+    <display-name>LojaController</display-name>
     <servlet-name>LojaController</servlet-name>
-    <servlet-class>br.concessionaria.controller.LojaController</servlet-class>
+    <servlet-class>br.com.concessionaria.controller.LojaController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LojaController</servlet-name>
@@ -16,7 +18,7 @@
     <description></description>
     <display-name>TrafegoController</display-name>
     <servlet-name>TrafegoController</servlet-name>
-    <servlet-class>br.concessionaria.controller.TrafegoController</servlet-class>
+    <servlet-class>br.com.concessionaria.controller.TrafegoController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>TrafegoController</servlet-name>

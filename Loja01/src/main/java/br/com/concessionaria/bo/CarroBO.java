@@ -1,12 +1,17 @@
-package br.concessionaria.biol;
+package br.com.concessionaria.bo;
+
+
+
 
 import java.util.List;
-
 
 import br.com.concessionaria.dao.CarroDAO;
 import br.com.concessionaria.model.Carro;
 
+
+
 public class CarroBO {
+	
 	public List<Carro> listaCarro() {
 		CarroDAO cdao = new CarroDAO();
 		return cdao.select();
@@ -33,3 +38,6 @@ public class CarroBO {
 	
 	
 }
+
+
+
